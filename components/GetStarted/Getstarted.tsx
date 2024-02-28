@@ -1,6 +1,7 @@
 import React from "react";
-
+import { useRouter } from "next/router";
 const Getstarted = () => {
+  const router = useRouter();
   return (
     <section className="py-16 bg-gradient-to-r from-slate-100 to-blue-200">
       <div className="container mx-auto px-4">
@@ -9,12 +10,12 @@ const Getstarted = () => {
           Join thousands of businesses already using our platform to create
           their online presence.
         </p>
-        <a
-          href="#"
-          className="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-bold py-3 px-8 rounded-lg inline-block shadow-md"
+        <button
+          onClick={() => router.push("/booking")}
+          className="bg-white text-blue-500 hover:bg-blue-100 text-lg font-bold py-2 px-6 rounded-full mt-8"
         >
-          Create Your Website
-        </a>
+          Book your website
+        </button>
       </div>
     </section>
   );

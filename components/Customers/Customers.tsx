@@ -4,7 +4,7 @@ const CustomerCountSection = () => {
   const [customerCount, setCustomerCount] = useState(0);
 
   useEffect(() => {
-    const targetCount = 150; // Your target customer count
+    const targetCount = 350; // Your target customer count
 
     const updateCount = () => {
       let currentCount = 0;
@@ -30,7 +30,7 @@ const CustomerCountSection = () => {
         </h2>
         <p className="text-lg">
           We are proud to have served over {customerCount} small businesses and
-          counting. Let us help you grow your business too!
+          brands. Let us help you grow your business too!
         </p>
       </div>
     </section>

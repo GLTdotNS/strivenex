@@ -1,180 +1,251 @@
 import React, { useState } from "react";
-import { RiArrowDropDownLine } from "react-icons/ri";
-import { CiMenuFries } from "react-icons/ci";
 import { IoMdClose } from "react-icons/io";
+import { HiMenuAlt2 } from "react-icons/hi";
+import { FiChevronDown } from "react-icons/fi";
 import logo from "../../styles/logo.png";
+import Image from "next/image";
+import Link from "next/link";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [dropdown, setDropdown] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
+  const [productsOpen, setProductsOpen] = useState(false);
 
-  // Function to toggle the dropdown menu
-  const toggleDropdown = () => {
-    setDropdown(!dropdown);
+  const toggleServices = () => {
+    setServicesOpen(!servicesOpen);
+    setProductsOpen(false);
+  };
+
+  const toggleProducts = () => {
+    setProductsOpen(!productsOpen);
+    setServicesOpen(false);
+  };
+
+  const changeLanguage = () => {
+    // Your logic for changing the language goes here
+    console.log("Language changed to:");
   };
 
   return (
-    <nav className="bg-white fixed w-full p-2">
-      <div className="mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          <div className="flex items-center justify-between w-full">
-            {/* Logo */}
-            <div className="flex-shrink-0">
-              <img className="h-16 w-full" src={logo.src} alt="Logo" />
-            </div>
-            {/* Links */}
-            <div className="hidden md:block flex-grow ">
-              <div className="flex items-baseline space-x-4 justify-end">
-                <a
-                  href="#"
-                  className="text-gray-700 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                >
-                  Home
-                </a>
-                {/* Dropdown for Services */}
-                <div
-                  className="relative"
-                  onMouseEnter={() => setDropdown(true)}
-                  onMouseLeave={() => setDropdown(false)}
-                >
-                  <button className="text-gray-700 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
-                    Services
-                    <RiArrowDropDownLine size={20} style={{ float: "right" }} />
-                  </button>
-                  <div
-                    className={`absolute z-10  w-64 bg-white rounded-md shadow-lg ${
-                      dropdown ? "" : "hidden"
-                    }`}
-                    style={{ right: 0 }}
-                  >
-                    <div className="py-1 ">
-                      <a
-                        href="#"
-                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                      >
-                        Essential Starter Pack
-                      </a>
-                      <a
-                        href="#"
-                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                      >
-                        Standard Growth Package
-                      </a>
-                      <a
-                        href="#"
-                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                      >
-                        Advanced Advantage Package
-                      </a>
-                      <a
-                        href="#"
-                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                      >
-                        Premium Power Pack
-                      </a>
-                      <a
-                        href="#"
-                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                      >
-                        Elite Enterprise Package
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <a
-                  href="#"
-                  className="text-gray-700 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                >
-                  About
-                </a>
-                <a
-                  href="#"
-                  className="text-gray-700 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                >
-                  Contact
-                </a>
-              </div>
-            </div>
-          </div>
-          {/* Hamburger Menu for Mobile */}
-          <div className="-mr-2 flex md:hidden">
+    <nav className="bg-white fixed w-full p-4">
+      <div className="container mx-auto flex justify-between items-center">
+        <div className="flex items-center">
+          <Image
+            height={500}
+            width={500}
+            src={logo.src}
+            alt="Logo"
+            className="h-16 w-auto mr-4"
+          />
+          <span className="font-semibold text-lg text-gray-800"></span>
+        </div>
+        <div className="flex items-center">
+          <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-700  inline-flex items-center justify-center p-2 rounded-md focus:outline-none"
+              className="text-gray-700 focus:outline-none"
             >
-              <div>
-                {isOpen ? <IoMdClose size={30} /> : <CiMenuFries size={30} />}
-              </div>
+              {isOpen ? (
+                <IoMdClose className="h-6 w-6" />
+              ) : (
+                <HiMenuAlt2 className="h-6 w-6" />
+              )}
             </button>
           </div>
-        </div>
-      </div>
-      {/* Dropdown Menu for Mobile */}
-      {isOpen && (
-        <div className="md:hidden" role="menu">
-          <div className=" pt-2 pb-3 space-y-1 sm:px-3 border-2">
-            <a
-              href="#"
-              className="text-gray-700 hover:bg-slate-100 hover:text-gray px-3 py-2 rounded-md text-sm font-medium"
-            >
-              Home
-            </a>
+          <div className="hidden md:flex items-center space-x-8">
+            <Link href={"/"}>Home</Link>
+
             <div className="relative">
               <button
-                onClick={() => setDropdown(!dropdown)}
-                className="text-gray-700 hover:bg-slate-50 hover:text-gray px-3 py-2 rounded-md text-sm font-medium"
+                onMouseEnter={toggleServices}
+                onMouseLeave={toggleServices}
+                className="text-gray-700   hover:text-gray-900 focus:outline-none relative flex items-center"
               >
-                Services
-                <RiArrowDropDownLine />
+                <span>Services</span>
+                <FiChevronDown className="ml-1" />
+                {servicesOpen && (
+                  <div className="absolute text-left mt-[290px]  w-[250px] bg-white shadow-lg ">
+                    <a
+                      href="#"
+                      className="py-2 border-b-2 px-4 text-sm bg-slate-100 text-gray-700 hover:text-gray-900 block"
+                    >
+                      Web design
+                    </a>
+                    <a
+                      href="#"
+                      className="py-2 bg-slate-50 border-b-2 px-4 text-sm text-gray-700 hover:text-gray-900 block"
+                    >
+                      Web developement
+                    </a>
+                    <a
+                      href="#"
+                      className="py-2 border-b-2 px-4 text-sm bg-slate-100 text-gray-700 hover:text-gray-900 block"
+                    >
+                      Website maintance
+                    </a>{" "}
+                    <a
+                      href="#"
+                      className="py-2 bg-slate-50 border-b-2 px-4 text-sm text-gray-700 hover:text-gray-900 block"
+                    >
+                      Redesign
+                    </a>{" "}
+                    <a
+                      href="#"
+                      className="py-2 border-b-2 px-4 text-sm bg-slate-100 text-gray-700 hover:text-gray-900 block"
+                    >
+                      Content writing
+                    </a>{" "}
+                    <a
+                      href="#"
+                      className="py-2 bg-slate-50 border-b-2 px-4 text-sm text-gray-700 hover:text-gray-900 block"
+                    >
+                      SEO
+                    </a>{" "}
+                    <a
+                      href="#"
+                      className="py-2 border-b-2 px-4 text-sm bg-slate-100 text-gray-700 hover:text-gray-900 block"
+                    >
+                      Logo design
+                    </a>{" "}
+                  </div>
+                )}
               </button>
-              <div
-                className={`absolute inset-12 left-0 w-full bg-slate-50 h-48 z-10 bg-white border-b-2 shadow-lg ${
-                  dropdown ? "" : "hidden"
-                }`}
+            </div>
+            <div className="relative">
+              <button
+                onMouseEnter={toggleProducts}
+                onMouseLeave={toggleProducts}
+                className="text-gray-700   hover:text-gray-900 focus:outline-none relative flex items-center"
               >
-                <div className="py-1 ">
-                  <a
-                    href="#"
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                  >
-                    Essential Starter Pack
-                  </a>
-                  <a
-                    href="#"
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                  >
-                    Standard Growth Package
-                  </a>
-                  <a
-                    href="#"
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                  >
-                    Advanced Advantage Package
-                  </a>
-                  <a
-                    href="#"
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                  >
-                    Premium Power Pack
-                  </a>
-                  <a
-                    href="#"
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                  >
-                    Elite Enterprise Package
-                  </a>
-                </div>
-              </div>
+                <span>Products</span>
+                <FiChevronDown className="ml-1" />
+                {productsOpen && (
+                  <div className="absolute text-left mt-32 w-[250px] bg-white shadow-lg ">
+                    <Link
+                      href="/products/basic"
+                      className="py-2 border-b-2 px-4 text-sm bg-slate-100 text-gray-700 hover:text-gray-900 block"
+                    >
+                      Web design
+                    </Link>
+                    <Link
+                      href="/products/standard"
+                      className="py-2 bg-slate-50 border-b-2 px-4 text-sm text-gray-700 hover:text-gray-900 block"
+                    >
+                      Web developement
+                    </Link>
+                    <Link
+                      href="/products/advanced"
+                      className="py-2 border-b-2 px-4 text-sm bg-slate-100 text-gray-700 hover:text-gray-900 block"
+                    >
+                      Website maintance
+                    </Link>{" "}
+                  </div>
+                )}
+              </button>
             </div>
             <a
               href="#"
-              className="text-gray-700 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+              className="text-gray-700 hover:text-gray-900 focus:outline-none"
             >
               About
             </a>
             <a
               href="#"
-              className="text-gray-700 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+              className="text-gray-700 hover:text-gray-900 focus:outline-none"
+            >
+              Contact
+            </a>
+          </div>
+          {/* Language Change Button */}
+          <button
+            onClick={() => changeLanguage()}
+            className="text-gray-700 hover:text-gray-900 focus:outline-none ml-8 flex items-center"
+          >
+            <img
+              alt="Germany"
+              height={20}
+              width={20}
+              src={
+                "https://png2.cleanpng.com/sh/111a992450be726949134d123a60bc53/L0KzQYm3U8E6N5Dpj5H0aYP2gLBuTgN6dZN0hJ9EZXzvf8i0gBlza51qRdh4boSwd7b5jfFvgV46edQ5NkHpRoiBVsc6Ol89TacCMUG7SYK8UsE2OGk9TaY9OUO1PsH1h5==/kisspng-symbol-yellow-circle-font-germany-5ab061f6786792.8557118915215088544932.png"
+              }
+              className="mr-2"
+            />
+            <span>DE</span>
+          </button>
+        </div>
+      </div>
+      {/* Mobile Menu */}
+      {isOpen && (
+        <div className="md:hidden">
+          <div className="mt-2 px-4 py-3 bg-white shadow sm:hidden">
+            <Link onClick={() => setIsOpen(!open)} href={"/"}>
+              Home
+            </Link>
+            <button
+              onClick={toggleServices}
+              className="block py-2 text-sm text-gray-700 hover:text-gray-900 focus:outline-none"
+            >
+              Services
+            </button>
+            {servicesOpen && (
+              <div className="pl-4 transition-all">
+                <a
+                  onClick={() => setIsOpen(!open)}
+                  href="#"
+                  className="block py-2 text-sm text-gray-700 hover:text-gray-900"
+                >
+                  Service 1
+                </a>
+                <a
+                  onClick={() => setIsOpen(!open)}
+                  href="#"
+                  className="block py-2 text-sm text-gray-700 hover:text-gray-900"
+                >
+                  Service 2
+                </a>
+                {/* Add more services here */}
+              </div>
+            )}
+            <button
+              onClick={toggleProducts}
+              className="block py-2 text-sm text-gray-700 hover:text-gray-900 focus:outline-none"
+            >
+              Products
+            </button>
+            {productsOpen && (
+              <div className="pl-4">
+                <Link
+                  onClick={() => setIsOpen(!open)}
+                  href="/products/basic"
+                  className="block py-2 text-sm text-gray-700 hover:text-gray-900"
+                >
+                  Basic
+                </Link>
+                <Link
+                  onClick={() => setIsOpen(!open)}
+                  href="/products/standard"
+                  className="block py-2 text-sm text-gray-700 hover:text-gray-900"
+                >
+                  Standard
+                </Link>
+                <Link
+                  onClick={() => setIsOpen(!open)}
+                  href="/products/advanced"
+                  className="block py-2 text-sm text-gray-700 hover:text-gray-900"
+                >
+                  Premium
+                </Link>
+              </div>
+            )}
+            <a
+              href="#"
+              className="block py-2 text-sm text-gray-700 hover:text-gray-900 focus:outline-none"
+            >
+              About
+            </a>
+            <a
+              href="#"
+              className="block py-2 text-sm text-gray-700 hover:text-gray-900 focus:outline-none"
             >
               Contact
             </a>
