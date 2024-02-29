@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { FaRegCheckCircle } from "react-icons/fa";
+import { FaRegCheckCircle, FaRegTimesCircle } from "react-icons/fa";
 import { FaCheck } from "react-icons/fa";
-
+import { useRouter } from "next/router";
 import small from "../../styles/small.png";
 import { BsArrowRight } from "react-icons/bs";
 const SmallBasicPage: React.FC = () => {
@@ -9,6 +9,7 @@ const SmallBasicPage: React.FC = () => {
     new Array(10).fill(false)
   );
 
+  const router = useRouter();
   const toggleAccordion = (index: number) => {
     const updatedAccordionState = [...accordionState];
     updatedAccordionState[index] = !updatedAccordionState[index];
@@ -17,42 +18,42 @@ const SmallBasicPage: React.FC = () => {
 
   const faqs = [
     {
-      question: "Is there a setup fee for the Small Basic Package?",
-      answer: "No, there is no setup fee for the Small Basic Package.",
+      question: "Is there a setup fee for the Basic Starter Pack?",
+      answer: "No, there is no setup fee for the Basic Starter Pack.",
     },
     {
       question: "Can I cancel my subscription at any time?",
       answer:
-        "Yes, you can cancel your subscription to the Small Basic Package at any time with no additional fees.",
+        "Yes, you can cancel your subscription to the Basic Starter Pack at any time with no additional fees.",
     },
     {
       question: "Do you offer domain registration services?",
       answer:
-        "Yes, we offer domain registration services as part of our Small Basic Package.",
+        "Yes, we offer domain registration services as part of our Basic Starter Pack.",
     },
     {
       question: "Is technical support included in the package?",
       answer:
-        "Yes, technical support is included in the Small Basic Package. Our team is available to assist you with any issues or questions.",
+        "Yes, technical support is included in the Basic Starter Pack. Our team is available to assist you with any issues or questions.",
     },
     {
       question: "Are there any limitations on storage or bandwidth?",
       answer:
-        "No, there are no limitations on storage or bandwidth for the Small Basic Package.",
+        "Yes, there are limitations on storage or bandwidth for the Basic Starter Pack Bandwidth is capped at 20,000 users.",
     },
     {
       question: "Can I customize the design of my website?",
       answer:
-        "Yes, you can customize the design of your website using our built-in customization options.",
+        "No, customization options for the website design are not available with the Basic Starter Pack.",
     },
     {
       question: "Is SSL security included in the package?",
-      answer: "Yes, SSL security is included in the Small Basic Package.",
+      answer: "Yes, SSL security is included in the Basic Starter Pack.",
     },
     {
       question: "Do you offer email hosting services?",
       answer:
-        "Yes, we offer email hosting services as part of our Small Basic Package.",
+        "Yes, we offer email hosting services as part of our Basic Starter Pack.",
     },
     {
       question: "Can I upgrade to a higher package later?",
@@ -76,29 +77,66 @@ const SmallBasicPage: React.FC = () => {
           className="w-full h-34 rounded-lg"
         />
       </div>
-      {/* Package Details */}
-      <div>
-        <h1 className="text-3xl font-bold mb-4">Small Basic Package</h1>
+
+      <div className="mb-8">
+        <h2 className="text-2xl font-semibold mb-4">
+          Basic Starter Pack{" "}
+          <button
+            onClick={() => router.push("/booking")}
+            className="bg-slate-200 text-blue-500 hover:bg-blue-100 text-lg font-bold py-2 px-6 rounded-full mt-8"
+          >
+            Book now
+          </button>
+        </h2>
         <p className="mb-4">
-          This package is designed for small businesses and startups who are
-          looking to establish their online presence with essential features.
+          The Small Basic Package is tailored for small businesses, startups,
+          and entrepreneurs seeking a streamlined online presence. Below are the
+          key highlights of this package:
         </p>
-        <h2 className="text-xl font-semibold mb-2">Features:</h2>
-        <ul className="list-disc list-inside mb-4">
-          <li className="flex items-center">
-            <FaRegCheckCircle className="text-green-500 mr-2" />
-            Basic website setup
+        <ul className="list-disc list-inside">
+          <li className="flex items-center mb-2 relative">
+            <FaRegCheckCircle className="text-green-500 absolute left-[-15px] inset-[4px] mr-2 " />
+            <span className="ml-2">
+              {" "}
+              Basic website setup with user-friendly interface.
+            </span>
           </li>
-          <li className="flex items-center">
-            <FaRegCheckCircle className="text-green-500 mr-2" />
-            Social media integration
+
+          <li className="flex items-center mb-2 relative">
+            <FaRegCheckCircle className="text-green-500 absolute left-[-15px] inset-[4px] mr-2 " />
+            <span className="ml-2">
+              {" "}
+              Seamless social media integration to enhance online visibility.
+            </span>
           </li>
-          <li className="flex items-center">
-            <FaRegCheckCircle className="text-green-500 mr-2" />
-            SEO optimization
+
+          <li className="flex items-center mb-2 relative">
+            <FaRegCheckCircle className="text-green-500 absolute left-[-15px] inset-[4px] mr-2 " />
+            <span className="ml-2">
+              {" "}
+              Search Engine Optimization (SEO) tools for better search engine
+              ranking.
+            </span>
+          </li>
+
+          <li className="flex items-center mb-2 relative">
+            <FaRegCheckCircle className="text-green-500 absolute left-[-15px] inset-[4px] mr-2 " />
+            <span className="ml-2">
+              {" "}
+              Providing bandwidth ranging from 5,000 to 20,000 users.
+            </span>
           </li>
         </ul>
+
+        <p className="mt-4">Ideal for:</p>
+        <ul className="list-disc list-inside text-gray-600">
+          <li>Restaurants</li>
+          <li>Small construction companies</li>
+          <li>Retail stores</li>
+          {/* Add more if needed */}
+        </ul>
       </div>
+
       {/* Additional Services */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-8">
         {/* Card 1 */}
@@ -112,7 +150,7 @@ const SmallBasicPage: React.FC = () => {
         </div>
         {/* Card 2 */}
         <div className="bg-green-100 p-4 rounded-lg">
-          <FaRegCheckCircle className="text-green-500 mb-2" />
+          <FaRegTimesCircle className="text-red-500 mb-2" />
           <h3 className="text-lg font-semibold mb-2">Customization Options</h3>
           <p className="text-sm">
             Customize your website with various color schemes, fonts, and layout
@@ -130,95 +168,198 @@ const SmallBasicPage: React.FC = () => {
         </div>
       </div>
 
-      <div className="container mx-auto px-4 py-8">
-        <h2 className="text-3xl font-bold mb-4">Package Comparison</h2>
-        <div className="overflow-x-auto">
-          <table className="table-auto border-collapse border border-gray-300 w-full">
-            <thead>
-              <tr className="bg-gray-200">
-                <th className="py-2 px-4 text-lg font-bold border border-gray-300">
-                  Package
-                </th>
-                <th className="py-2 px-4 text-lg font-bold border border-gray-300">
-                  Description
-                </th>
-                <th className="py-2 px-4 text-lg font-bold border border-gray-300">
-                  Features
-                </th>
-                <th className="py-2 px-4 text-lg font-bold border border-gray-300">
-                  Sign Up
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              {/* Essential Starter Pack */}
-              <tr className="bg-white">
-                <td className="py-4 px-4 border border-gray-300 font-semibold">
-                  Essential Starter Pack
-                </td>
-                <td className="py-4 px-4 border border-gray-300">
-                  Ideal for startups and small businesses. Includes essential
-                  services to establish an online presence.
-                </td>
-                <td className="py-4 px-4 border border-gray-300">
-                  <ul className="list-disc list-inside">
-                    <li>Basic website setup</li>
-                    <li>Social media integration</li>
-                    <li>SEO optimization</li>
-                  </ul>
-                </td>
-                <td className="py-4 px-4 border border-gray-300">
-                  <button className="bg-gradient-to-r from-orange-400 to-yellow-500 text-white font-bold py-2 px-4 rounded">
-                    Sign Up
-                  </button>
-                </td>
-              </tr>
-              {/* Standard Growth Package */}
-              <tr className="bg-gray-100">
-                <td className="py-4 px-4 border border-gray-300 font-semibold">
-                  Standard Growth Package
-                </td>
-                <td className="py-4 px-4 border border-gray-300">
-                  Designed for businesses looking to expand their reach. Offers
-                  standard marketing and growth-oriented services.
-                </td>
-                <td className="py-4 px-4 border border-gray-300">
-                  <ul className="list-disc list-inside">
-                    <li>Feature 1</li>
-                    <li>Feature 2</li>
-                    <li>Feature 3</li>
-                  </ul>
-                </td>
-                <td className="py-4 px-4 border border-gray-300">
-                  <button className="bg-gray-300 text-gray-700 font-bold py-2 px-4 rounded cursor-not-allowed">
-                    Sign Up
-                  </button>
-                </td>
-              </tr>
-              {/* Advanced Advantage Package */}
-              <tr className="bg-white">
-                <td className="py-4 px-4 border border-gray-300 font-semibold">
-                  Advanced Advantage Package
-                </td>
-                <td className="py-4 px-4 border border-gray-300">
-                  Tailored for businesses seeking a competitive edge. Provides
-                  advanced marketing strategies and optimization services.
-                </td>
-                <td className="py-4 px-4 border border-gray-300">
-                  <ul className="list-disc list-inside">
-                    <li>Feature 1</li>
-                    <li>Feature 2</li>
-                    <li>Feature 3</li>
-                  </ul>
-                </td>
-                <td className="py-4 px-4 border border-gray-300">
-                  <button className="bg-gray-300 text-gray-700 font-bold py-2 px-4 rounded cursor-not-allowed">
-                    Sign Up
-                  </button>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+      <div className="container mx-auto px-4 py-8 text-gray-700">
+        <div className="grid grid-cols-1  md:grid-cols-2  gap-8">
+          {/* Essential Starter Pack */}
+          <div className="bg-white shadow-lg rounded-lg overflow-hidden">
+            <div className="p-6">
+              <h3 className="text-xl font-semibold mb-2">Basic Starter Pack</h3>
+              <p className="text-gray-600 mb-4">
+                Tailored for startups and small businesses, offering essential
+                services to establish a robust online presence. <br />
+              </p>
+              <br />
+              <ul className="list-disc list-inside mb-4">
+                <li className="flex items-center mb-2">
+                  <FaRegCheckCircle className="text-green-500 mr-2" />
+                  Basic website setup
+                </li>
+                <li className="flex items-center mb-2">
+                  <FaRegCheckCircle className="text-green-500 mr-2" />
+                  Free logo design
+                </li>
+                <li className="flex items-center mb-2">
+                  <FaRegCheckCircle className="text-green-500 mr-2" />
+                  Social media integration
+                </li>
+                <li className="flex items-center mb-2">
+                  <FaRegTimesCircle className="text-red-500 mr-2" />
+                  SEO optimization
+                </li>
+                <li className="flex items-center mb-2">
+                  <FaRegTimesCircle className="text-red-500 mr-2" />
+                  Advanced SEO analytics
+                </li>
+                <li className="flex items-center mb-2">
+                  <FaRegTimesCircle className="text-red-500 mr-2" />
+                  Monthly reports
+                </li>
+                <li className="flex items-center mb-2">
+                  <FaRegTimesCircle className="text-red-500 mr-2" />
+                  Unlimited bandwidth
+                </li>
+              </ul>
+              <button className="block w-full py-2 text-center rounded-lg bg-gray-300 text-gray-700 cursor-not-allowed">
+                Learn more
+              </button>
+            </div>
+          </div>
+
+          {/* Standard Growth Package */}
+          <div className="bg-white shadow-lg rounded-lg overflow-hidden">
+            <div className="p-6">
+              <h3 className="text-xl font-semibold mb-2">
+                Standard Growth Package
+              </h3>
+              <p className="text-gray-600 mb-4">
+                Designed for businesses looking to expand their reach. Offers
+                standard marketing and growth-oriented services.
+              </p>
+              <br />
+              <ul className="list-disc list-inside mb-4">
+                <li className="flex items-center mb-2">
+                  <FaRegCheckCircle className="text-green-500 mr-2" />
+                  Advanced website setup
+                </li>
+                <li className="flex items-center mb-2">
+                  <FaRegCheckCircle className="text-green-500 mr-2" />
+                  Free logo design
+                </li>
+                <li className="flex items-center mb-2">
+                  <FaRegCheckCircle className="text-green-500 mr-2" />
+                  Social media integration
+                </li>
+                <li className="flex items-center mb-2">
+                  <FaRegCheckCircle className="text-green-500 mr-2" />
+                  SEO optimization
+                </li>
+                <li className="flex items-center mb-2">
+                  <FaRegTimesCircle className="text-red-500 mr-2" />
+                  Advanced SEO analytics
+                </li>
+                <li className="flex items-center mb-2">
+                  <FaRegTimesCircle className="text-red-500 mr-2" />
+                  Monthly reports
+                </li>
+                <li className="flex items-center mb-2">
+                  <FaRegTimesCircle className="text-red-500 mr-2" />
+                  Unlimited bandwidth
+                </li>
+              </ul>
+              <button
+                onClick={() => router.push("/products/standard")}
+                className="block w-full py-2 text-center rounded-lg bg-gradient-to-r from-orange-400 to-yellow-500 text-white font-bold hover:bg-yellow-400 transition-all duration-300"
+              >
+                Learn more
+              </button>
+            </div>
+          </div>
+
+          {/* Advanced Advantage Package */}
+          <div className="bg-white shadow-lg rounded-lg overflow-hidden">
+            <div className="p-6">
+              <h3 className="text-xl font-semibold mb-2">
+                Premium Advantage Package
+              </h3>
+              <p className="text-gray-600 mb-4">
+                Tailored for businesses seeking a competitive edge. Provides
+                advanced marketing strategies and optimization services.
+              </p>
+              <ul className="list-disc list-inside mb-4">
+                <li className="flex items-center mb-2">
+                  <FaRegCheckCircle className="text-green-500 mr-2" />
+                  Advanced website setup
+                </li>
+                <li className="flex items-center mb-2">
+                  <FaRegCheckCircle className="text-green-500 mr-2" />
+                  Free logo design
+                </li>
+                <li className="flex items-center mb-2">
+                  <FaRegCheckCircle className="text-green-500 mr-2" />
+                  Social media integration
+                </li>
+                <li className="flex items-center mb-2">
+                  <FaRegCheckCircle className="text-green-500 mr-2" />
+                  SEO optimization
+                </li>
+                <li className="flex items-center mb-2">
+                  <FaRegCheckCircle className="text-green-500 mr-2" />
+                  Advanced SEO analytics
+                </li>
+                <li className="flex items-center mb-2">
+                  <FaRegCheckCircle className="text-green-500  mr-2" />
+                  Monthly reports
+                </li>
+                <li className="flex items-center mb-2">
+                  <FaRegCheckCircle className="text-green-500  mr-2" />
+                  Unlimited bandwidth
+                </li>
+              </ul>
+              <button
+                onClick={() => router.push("/products/advanced")}
+                className="block w-full py-2 text-center rounded-lg bg-gradient-to-r from-orange-400 to-yellow-500 text-white font-bold hover:bg-yellow-400 transition-all duration-300"
+              >
+                Learn more
+              </button>
+            </div>
+          </div>
+          <div className="bg-white shadow-lg rounded-lg overflow-hidden">
+            <div className="p-6">
+              <h3 className="text-xl font-semibold mb-2">Custom Package</h3>
+              <p className="text-gray-600 mb-4">
+                Tailored to fit your specific business needs. Choose your
+                desired features and services.
+              </p>
+              <br />
+              <ul className="list-disc list-inside mb-4">
+                {/* Add your custom options here */}
+                <li className="flex items-center mb-2">
+                  <FaRegCheckCircle className="text-green-500 mr-2" />
+                  Custom feature
+                </li>
+                <li className="flex items-center mb-2">
+                  <FaRegCheckCircle className="text-green-500 mr-2" />
+                  Custom feature
+                </li>
+                <li className="flex items-center mb-2">
+                  <FaRegCheckCircle className="text-green-500 mr-2" />
+                  Custom feature
+                </li>
+                <li className="flex items-center mb-2">
+                  <FaRegCheckCircle className="text-green-500 mr-2" />
+                  Custom feature
+                </li>
+                <li className="flex items-center mb-2">
+                  <FaRegCheckCircle className="text-green-500 mr-2" />
+                  Custom feature
+                </li>
+                <li className="flex items-center mb-2">
+                  <FaRegCheckCircle className="text-green-500 mr-2" />
+                  Custom feature
+                </li>
+                <li className="flex items-center mb-2">
+                  <FaRegCheckCircle className="text-green-500 mr-2" />
+                  Custom feature
+                </li>
+              </ul>
+              <button
+                onClick={() => router.push("/products/custom")}
+                className="block w-full py-2 text-center rounded-lg bg-gradient-to-r from-orange-400 to-yellow-500 text-white font-bold hover:bg-yellow-400 transition-all duration-300"
+              >
+                Learn more
+              </button>
+            </div>
+          </div>
         </div>
       </div>
       {/* FAQ Section */}

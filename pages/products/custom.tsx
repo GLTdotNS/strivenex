@@ -89,7 +89,7 @@ const AdvancedAdvantagePage: React.FC = () => {
       {/* Package Details */}
       <div>
         <h1 className="text-3xl font-bold mb-4">
-          Premium Advantage Package{" "}
+          Custom Package{" "}
           <button
             onClick={() => router.push("/booking")}
             className="bg-slate-200 text-blue-500 hover:bg-blue-100 text-lg font-bold py-2 px-6 rounded-full mt-8"
@@ -98,8 +98,16 @@ const AdvancedAdvantagePage: React.FC = () => {
           </button>
         </h1>
         <p className="mb-4">
-          This package is tailored for businesses seeking a competitive edge
-          with advanced marketing strategies and optimization services.
+          The Custom Package is designed for businesses seeking tailored
+          solutions to meet their specific needs. With flexible features and
+          customizable options, this package allows you to tailor your online
+          presence according to your unique requirements. Whether you&apos;re a
+          startup looking to establish your brand or an established business
+          aiming to expand your reach, our Custom Package offers the versatility
+          and scalability to accommodate your evolving needs. From website
+          design and functionality to marketing strategies and technical
+          support, we work closely with you to deliver a solution that aligns
+          perfectly with your goals and objectives.
         </p>
         <h2 className="text-xl font-semibold mb-2">Features:</h2>
         <ul className="list-disc list-inside mb-4">
@@ -264,7 +272,7 @@ const AdvancedAdvantagePage: React.FC = () => {
               <p className="text-gray-600 mb-4">
                 Tailored for businesses seeking a competitive edge. Provides
                 advanced marketing strategies and optimization services.
-              </p>{" "}
+              </p>
               <ul className="list-disc list-inside mb-4">
                 <li className="flex items-center mb-2">
                   <FaRegCheckCircle className="text-green-500 mr-2" />
@@ -295,7 +303,10 @@ const AdvancedAdvantagePage: React.FC = () => {
                   Unlimited bandwidth
                 </li>
               </ul>
-              <button className="block w-full py-2 text-center rounded-lg bg-gray-300 text-gray-700 cursor-not-allowed">
+              <button
+                onClick={() => router.push("/products/advanced")}
+                className="block w-full py-2 text-center rounded-lg bg-gradient-to-r from-orange-400 to-yellow-500 text-white font-bold hover:bg-yellow-400 transition-all duration-300"
+              >
                 Learn more
               </button>
             </div>
@@ -339,10 +350,7 @@ const AdvancedAdvantagePage: React.FC = () => {
                   Custom feature
                 </li>
               </ul>
-              <button
-                onClick={() => router.push("/products/custom")}
-                className="block w-full py-2 text-center rounded-lg bg-gradient-to-r from-orange-400 to-yellow-500 text-white font-bold hover:bg-yellow-400 transition-all duration-300"
-              >
+              <button className="block w-full py-2 text-center rounded-lg bg-gray-300 text-gray-700 cursor-not-allowed">
                 Learn more
               </button>
             </div>

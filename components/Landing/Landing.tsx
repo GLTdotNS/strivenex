@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 import bg from "../../styles/bg.png";
 import {
   FaShoppingCart,
@@ -8,29 +9,39 @@ import {
 import CustomerCountSection from "../Customers/Customers";
 import { FaRegCheckCircle, FaRegTimesCircle } from "react-icons/fa";
 import Link from "next/link";
-
+import { useRouter } from "next/router";
+import { useRef } from "react";
+import { useInView } from "react-intersection-observer";
 const Landing = () => {
+  const router = useRouter();
+
   return (
     <div className="bg-white-100">
       <header className="bg-cover bg-center text-blue-400 py-12">
         <div className="container mx-auto px-4 flex flex-col items-center md:flex-row md:items-start md:justify-between">
           <div className="max-w-md text-center md:text-left mt-24">
-            <h1 className="text-4xl font-bold leading-tight mt-4">
+            <h1 className="text-4xl font-bold leading-tight mt-4 slide-in-from-top">
               Empower Your Business Growth with Us
             </h1>
-            <p className="text-lg mb-8">
+            <p className="text-lg mb-8 animate-slide-in ">
               We offer easy solutions to enhance your business presence.
             </p>
             <ul className="text-left text-black mt-12 mb-12">
-              <li className="mb-2">Easy Contact with Our Team</li>
-              <li className="mb-2">Scalable and Customized Solutions</li>
-              <li>Growing Your Business Made Simple</li>
+              <li className="mb-2 slide-in-from-left">
+                Easy Contact with Our Team
+              </li>
+              <li className="mb-2 slide-in-from-right">
+                Scalable and Customized Solutions
+              </li>
+              <li className="animate-slide-in ">
+                Growing Your Business Made Simple
+              </li>
             </ul>
             <Link
               href="/booking"
               className="bg-gradient-to-r from-orange-300 to-orange-400 hover:from-orange-500 hover:to-orange-600 text-white font-bold py-2 px-6 rounded-lg inline-block shadow-md"
             >
-              Explore Now
+              Book now
             </Link>
           </div>
 
@@ -54,13 +65,13 @@ const Landing = () => {
           <button className="bg-white text-blue-500 hover:bg-blue-100 text-lg font-bold py-2 px-6 rounded-full mt-8">
             Learn More
           </button>
-          <div className="container mx-auto px-4 py-8 text-gray-700">
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div className="container mx-auto px-4 py-8 text-gray-700 ">
+            <div className="grid grid-cols-1  md:grid-cols-2  gap-8">
               {/* Essential Starter Pack */}
-              <div className="bg-white shadow-lg rounded-lg overflow-hidden">
+              <div className={`bg-white shadow-lg rounded-lg overflow-hidden`}>
                 <div className="p-6">
                   <h3 className="text-xl font-semibold mb-2">
-                    Essential Starter Pack
+                    Basic Starter Pack
                   </h3>
                   <p className="text-gray-600 mb-4">
                     Tailored for startups and small businesses, offering
@@ -68,7 +79,7 @@ const Landing = () => {
                     <br />
                   </p>
                   <br />
-                  <ul className="list-disc list-inside mb-4">
+                  <ul className="list-disc list-inside mb-4 ">
                     <li className="flex items-center mb-2">
                       <FaRegCheckCircle className="text-green-500 mr-2" />
                       Basic website setup
@@ -98,14 +109,14 @@ const Landing = () => {
                       No limit on bandwidth
                     </li>
                   </ul>
-                  <button className="block w-full py-2 text-center rounded-lg bg-gradient-to-r from-orange-400 to-yellow-500 text-white font-bold hover:bg-yellow-400 transition-all duration-300">
-                    Buy Now
+                  <button className="block w-full py-2 text-center rounded-lg bg-gray-300 text-gray-700 cursor-not-allowed">
+                    Learn more
                   </button>
                 </div>
               </div>
 
               {/* Standard Growth Package */}
-              <div className="bg-white shadow-lg rounded-lg overflow-hidden">
+              <div className="bg-white shadow-lg rounded-lg overflow-hidden slide-in-from-right ">
                 <div className="p-6">
                   <h3 className="text-xl font-semibold mb-2">
                     Standard Growth Package
@@ -114,7 +125,7 @@ const Landing = () => {
                     Designed for businesses looking to expand their reach.
                     Offers standard marketing and growth-oriented services.
                   </p>
-
+                  <br />
                   <ul className="list-disc list-inside mb-4">
                     <li className="flex items-center mb-2">
                       <FaRegCheckCircle className="text-green-500 mr-2" />
@@ -142,11 +153,14 @@ const Landing = () => {
                     </li>
                     <li className="flex items-center mb-2">
                       <FaRegTimesCircle className="text-red-500 mr-2" />
-                      No limit on bandwidth
+                      Unlimited bandwidth
                     </li>
                   </ul>
-                  <button className="block w-full py-2 text-center rounded-lg bg-gradient-to-r from-orange-400 to-yellow-500 text-white font-bold hover:bg-yellow-400 transition-all duration-300">
-                    Buy Now
+                  <button
+                    onClick={() => router.push("/products/standard")}
+                    className="block w-full py-2 text-center rounded-lg bg-gradient-to-r from-orange-400 to-yellow-500 text-white font-bold hover:bg-yellow-400 transition-all duration-300"
+                  >
+                    Learn more
                   </button>
                 </div>
               </div>
@@ -155,7 +169,7 @@ const Landing = () => {
               <div className="bg-white shadow-lg rounded-lg overflow-hidden">
                 <div className="p-6">
                   <h3 className="text-xl font-semibold mb-2">
-                    Advanced Advantage Package
+                    Premium Advantage Package
                   </h3>
                   <p className="text-gray-600 mb-4">
                     Tailored for businesses seeking a competitive edge. Provides
@@ -164,7 +178,7 @@ const Landing = () => {
                   <ul className="list-disc list-inside mb-4">
                     <li className="flex items-center mb-2">
                       <FaRegCheckCircle className="text-green-500 mr-2" />
-                      Website setup with dynamic content
+                      Advanced website setup
                     </li>
                     <li className="flex items-center mb-2">
                       <FaRegCheckCircle className="text-green-500 mr-2" />
@@ -191,8 +205,11 @@ const Landing = () => {
                       No limit on bandwidth
                     </li>
                   </ul>
-                  <button className="block w-full py-2 text-center rounded-lg bg-gradient-to-r from-orange-400 to-yellow-500 text-white font-bold hover:bg-yellow-400 transition-all duration-300">
-                    Buy Now
+                  <button
+                    onClick={() => router.push("/products/advanced")}
+                    className="block w-full py-2 text-center rounded-lg bg-gradient-to-r from-orange-400 to-yellow-500 text-white font-bold hover:bg-yellow-400 transition-all duration-300"
+                  >
+                    Learn more
                   </button>
                 </div>
               </div>
@@ -235,8 +252,11 @@ const Landing = () => {
                       Custom feature
                     </li>
                   </ul>
-                  <button className="block w-full py-2 text-center rounded-lg bg-gradient-to-r from-orange-400 to-yellow-500 text-white font-bold hover:bg-yellow-400 transition-all duration-300">
-                    Buy now
+                  <button
+                    onClick={() => router.push("/products/custom")}
+                    className="block w-full py-2 text-center rounded-lg bg-gradient-to-r from-orange-400 to-yellow-500 text-white font-bold hover:bg-yellow-400 transition-all duration-300"
+                  >
+                    Learn more
                   </button>
                 </div>
               </div>

@@ -1,15 +1,19 @@
 import React, { useState } from "react";
-import { FaRegCheckCircle, FaRegTimesCircle } from "react-icons/fa";
+import {
+  FaCheckCircle,
+  FaRegCheckCircle,
+  FaRegTimesCircle,
+} from "react-icons/fa";
 import { FaCheck } from "react-icons/fa";
-import { BsArrowRight } from "react-icons/bs";
-
+import { useRouter } from "next/router";
 import small from "../../styles/small.png";
-
-const StandardGrowthPage: React.FC = () => {
+import { BsArrowRight } from "react-icons/bs";
+const SmallBasicPage: React.FC = () => {
   const [accordionState, setAccordionState] = useState<Array<boolean>>(
     new Array(10).fill(false)
   );
 
+  const router = useRouter();
   const toggleAccordion = (index: number) => {
     const updatedAccordionState = [...accordionState];
     updatedAccordionState[index] = !updatedAccordionState[index];
@@ -19,7 +23,7 @@ const StandardGrowthPage: React.FC = () => {
   const faqs = [
     {
       question: "Is there a setup fee for the Standard Growth Package?",
-      answer: "Yes, there is a setup fee for the Standard Growth Package.",
+      answer: "No, there is no setup fee for the Standard Growth Package.",
     },
     {
       question: "Can I cancel my subscription at any time?",
@@ -39,12 +43,12 @@ const StandardGrowthPage: React.FC = () => {
     {
       question: "Are there any limitations on storage or bandwidth?",
       answer:
-        "No, there are no limitations on storage or bandwidth for the Standard Growth Package.",
+        "Yes, there are limitations on storage or bandwidth for the Standard Growth Package. Bandwidth is capped at 50,000 users.",
     },
     {
       question: "Can I customize the design of my website?",
       answer:
-        "Yes, you can customize the design of your website using our built-in customization options.",
+        "No, customization options for the website design are not available with the Standard Growth Package.",
     },
     {
       question: "Is SSL security included in the package?",
@@ -67,54 +71,76 @@ const StandardGrowthPage: React.FC = () => {
     },
   ];
 
-  // Additional features for Standard Growth Package
-  const additionalFeatures = [
-    "Enhanced social media marketing",
-    "Advanced SEO analytics",
-    "Email marketing campaigns",
-    "Monthly performance reports",
-  ];
-
   return (
     <div className="container mx-auto px-4 p-24">
       {/* Cover Image */}
       <div className="mb-8">
         <img
           src={small.src}
-          alt="Standard Growth Package Cover"
+          alt="Small Basic Package Cover"
           className="w-full h-34 rounded-lg"
         />
       </div>
-      {/* Package Details */}
-      <div>
-        <h1 className="text-3xl font-bold mb-4">Standard Growth Package</h1>
+
+      <div className="mb-8">
+        <h2 className="text-2xl font-semibold mb-4">
+          Standard Growth Package
+          <button
+            onClick={() => router.push("/booking")}
+            className="bg-slate-200 text-blue-500 hover:bg-blue-100 text-lg font-bold py-2 px-6 rounded-full mt-8"
+          >
+            Book now
+          </button>
+        </h2>
         <p className="mb-4">
-          This package is designed for businesses looking to expand their reach
-          with standard marketing and growth-oriented services.
+          The Standard Package is designed to cater to the needs of medium-sized
+          businesses and organizations looking for a comprehensive online
+          solution. Below are the key highlights of this package:
         </p>
-        <h2 className="text-xl font-semibold mb-2">Features:</h2>
-        <ul className="list-disc list-inside mb-4">
-          <li className="flex items-center">
-            <FaRegCheckCircle className="text-green-500 mr-2" />
-            Basic website setup
+        <ul className="list-disc list-inside">
+          <li className="flex items-center mb-2 relative">
+            <FaRegCheckCircle className="text-green-500 absolute left-[-15px] inset-[4px] mr-2 " />
+            <span className="ml-2">
+              {" "}
+              Advanced website setup with intuitive interface.
+            </span>
           </li>
-          <li className="flex items-center">
-            <FaRegCheckCircle className="text-green-500 mr-2" />
-            Social media integration
+
+          <li className="flex items-center mb-2 relative">
+            <FaRegCheckCircle className="text-green-500 absolute left-[-15px] inset-[4px] mr-2 " />
+            <span className="ml-2">
+              {" "}
+              Extensive social media integration for enhanced online presence.
+            </span>
           </li>
-          <li className="flex items-center">
-            <FaRegCheckCircle className="text-green-500 mr-2" />
-            SEO optimization
+
+          <li className="flex items-center mb-2 relative">
+            <FaRegCheckCircle className="text-green-500 absolute left-[-15px] inset-[4px] mr-2 " />
+            <span className="ml-2">
+              {" "}
+              Comprehensive Search Engine Optimization (SEO) strategies to boost
+              search engine rankings.
+            </span>
           </li>
-          {/* Additional features */}
-          {additionalFeatures.map((feature, index) => (
-            <li key={index} className="flex items-center">
-              <FaRegCheckCircle className="text-green-500 mr-2" />
-              {feature}
-            </li>
-          ))}
+
+          <li className="flex items-center mb-2 relative">
+            <FaRegCheckCircle className="text-green-500 absolute left-[-15px] inset-[4px] mr-2 " />
+            <span className="ml-2">
+              {" "}
+              Increased storage capacity and bandwidth allowance for growing
+              businesses.
+            </span>
+          </li>
+        </ul>
+        <p className="mt-4">Ideal for:</p>
+        <ul className="list-disc list-inside text-gray-600">
+          <li>Medium-sized businesses</li>
+          <li>Service providers</li>
+          <li>Online retailers</li>
+          {/* Add more if needed */}
         </ul>
       </div>
+
       {/* Additional Services */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-8">
         {/* Card 1 */}
@@ -145,15 +171,13 @@ const StandardGrowthPage: React.FC = () => {
           </p>
         </div>
       </div>
-      <div className="container mx-auto px-4 py-8">
-        <h2 className="text-3xl font-bold mb-4">Package Comparison</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+      <div className="container mx-auto px-4 py-8 text-gray-700">
+        <div className="grid grid-cols-1  md:grid-cols-2  gap-8">
           {/* Essential Starter Pack */}
           <div className="bg-white shadow-lg rounded-lg overflow-hidden">
             <div className="p-6">
-              <h3 className="text-xl font-semibold mb-2">
-                Essential Starter Pack
-              </h3>
+              <h3 className="text-xl font-semibold mb-2">Basic Starter Pack</h3>
               <p className="text-gray-600 mb-4">
                 Tailored for startups and small businesses, offering essential
                 services to establish a robust online presence. <br />
@@ -186,11 +210,14 @@ const StandardGrowthPage: React.FC = () => {
                 </li>
                 <li className="flex items-center mb-2">
                   <FaRegTimesCircle className="text-red-500 mr-2" />
-                  No limit on bandwidth
+                  Unlimited bandwidth
                 </li>
               </ul>
-              <button className="block w-full py-2 text-center rounded-lg bg-gray-300 text-gray-700 cursor-not-allowed">
-                Sign Up
+              <button
+                onClick={() => router.push("/products/basic")}
+                className="block w-full py-2 text-center rounded-lg bg-gradient-to-r from-orange-400 to-yellow-500 text-white font-bold hover:bg-yellow-400 transition-all duration-300"
+              >
+                Learn more
               </button>
             </div>
           </div>
@@ -205,6 +232,7 @@ const StandardGrowthPage: React.FC = () => {
                 Designed for businesses looking to expand their reach. Offers
                 standard marketing and growth-oriented services.
               </p>
+              <br />
               <ul className="list-disc list-inside mb-4">
                 <li className="flex items-center mb-2">
                   <FaRegCheckCircle className="text-green-500 mr-2" />
@@ -232,11 +260,11 @@ const StandardGrowthPage: React.FC = () => {
                 </li>
                 <li className="flex items-center mb-2">
                   <FaRegTimesCircle className="text-red-500 mr-2" />
-                  No limit on bandwidth
+                  Unlimited bandwidth
                 </li>
               </ul>
-              <button className="block w-full py-2 text-center rounded-lg bg-gradient-to-r from-orange-400 to-yellow-500 text-white font-bold hover:bg-yellow-400 transition-all duration-300">
-                Sign Up Now
+              <button className="block w-full py-2 text-center rounded-lg bg-gray-300 text-gray-700 cursor-not-allowed">
+                Learn more
               </button>
             </div>
           </div>
@@ -245,7 +273,7 @@ const StandardGrowthPage: React.FC = () => {
           <div className="bg-white shadow-lg rounded-lg overflow-hidden">
             <div className="p-6">
               <h3 className="text-xl font-semibold mb-2">
-                Advanced Advantage Package
+                Premium Advantage Package
               </h3>
               <p className="text-gray-600 mb-4">
                 Tailored for businesses seeking a competitive edge. Provides
@@ -254,7 +282,7 @@ const StandardGrowthPage: React.FC = () => {
               <ul className="list-disc list-inside mb-4">
                 <li className="flex items-center mb-2">
                   <FaRegCheckCircle className="text-green-500 mr-2" />
-                  Website setup with dynamic content
+                  Advanced website setup
                 </li>
                 <li className="flex items-center mb-2">
                   <FaRegCheckCircle className="text-green-500 mr-2" />
@@ -278,11 +306,61 @@ const StandardGrowthPage: React.FC = () => {
                 </li>
                 <li className="flex items-center mb-2">
                   <FaRegCheckCircle className="text-green-500  mr-2" />
-                  No limit on bandwidth
+                  Unlimited bandwidth
                 </li>
               </ul>
-              <button className="block w-full py-2 text-center rounded-lg bg-gray-300 text-gray-700 cursor-not-allowed">
-                Sign Up
+              <button
+                onClick={() => router.push("/products/advanced")}
+                className="block w-full py-2 text-center rounded-lg bg-gradient-to-r from-orange-400 to-yellow-500 text-white font-bold hover:bg-yellow-400 transition-all duration-300"
+              >
+                Learn more
+              </button>
+            </div>
+          </div>
+          <div className="bg-white shadow-lg rounded-lg overflow-hidden">
+            <div className="p-6">
+              <h3 className="text-xl font-semibold mb-2">Custom Package</h3>
+              <p className="text-gray-600 mb-4">
+                Tailored to fit your specific business needs. Choose your
+                desired features and services.
+              </p>
+              <br />
+              <ul className="list-disc list-inside mb-4">
+                {/* Add your custom options here */}
+                <li className="flex items-center mb-2">
+                  <FaRegCheckCircle className="text-green-500 mr-2" />
+                  Custom feature
+                </li>
+                <li className="flex items-center mb-2">
+                  <FaRegCheckCircle className="text-green-500 mr-2" />
+                  Custom feature
+                </li>
+                <li className="flex items-center mb-2">
+                  <FaRegCheckCircle className="text-green-500 mr-2" />
+                  Custom feature
+                </li>
+                <li className="flex items-center mb-2">
+                  <FaRegCheckCircle className="text-green-500 mr-2" />
+                  Custom feature
+                </li>
+                <li className="flex items-center mb-2">
+                  <FaRegCheckCircle className="text-green-500 mr-2" />
+                  Custom feature
+                </li>
+                <li className="flex items-center mb-2">
+                  <FaRegCheckCircle className="text-green-500 mr-2" />
+                  Custom feature
+                </li>
+                <li className="flex items-center mb-2">
+                  <FaRegCheckCircle className="text-green-500 mr-2" />
+                  Custom feature
+                </li>
+              </ul>
+              <button
+                onClick={() => router.push("/products/custom")}
+                className="block w-full py-2 text-center rounded-lg bg-gradient-to-r from-orange-400 to-yellow-500 text-white font-bold hover:bg-yellow-400 transition-all duration-300"
+              >
+                Learn more
               </button>
             </div>
           </div>
@@ -320,4 +398,4 @@ const StandardGrowthPage: React.FC = () => {
   );
 };
 
-export default StandardGrowthPage;
+export default SmallBasicPage;

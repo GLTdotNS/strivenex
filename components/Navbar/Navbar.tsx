@@ -27,7 +27,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-white fixed w-full p-4">
+    <nav className="bg-white fixed w-full p-4 z-50">
       <div className="container mx-auto flex justify-between items-center">
         <div className="flex items-center">
           <Image
@@ -120,24 +120,30 @@ const Navbar = () => {
                 <span>Products</span>
                 <FiChevronDown className="ml-1" />
                 {productsOpen && (
-                  <div className="absolute text-left mt-32 w-[250px] bg-white shadow-lg ">
+                  <div className="absolute text-left mt-44 w-[250px] bg-white shadow-lg ">
                     <Link
                       href="/products/basic"
                       className="py-2 border-b-2 px-4 text-sm bg-slate-100 text-gray-700 hover:text-gray-900 block"
                     >
-                      Web design
+                      Basic Starter Pack
                     </Link>
                     <Link
                       href="/products/standard"
                       className="py-2 bg-slate-50 border-b-2 px-4 text-sm text-gray-700 hover:text-gray-900 block"
                     >
-                      Web developement
+                      Standard Growth Package
                     </Link>
                     <Link
                       href="/products/advanced"
                       className="py-2 border-b-2 px-4 text-sm bg-slate-100 text-gray-700 hover:text-gray-900 block"
                     >
-                      Website maintance
+                      Premium Advantage Package
+                    </Link>{" "}
+                    <Link
+                      href="/products/custom"
+                      className="py-2 border-b-2 px-4 text-sm bg-slate-100 text-gray-700 hover:text-gray-900 block"
+                    >
+                      Custom Package
                     </Link>{" "}
                   </div>
                 )}
@@ -219,21 +225,28 @@ const Navbar = () => {
                   href="/products/basic"
                   className="block py-2 text-sm text-gray-700 hover:text-gray-900"
                 >
-                  Basic
+                  Basic Starter Pack
                 </Link>
                 <Link
                   onClick={() => setIsOpen(!open)}
                   href="/products/standard"
                   className="block py-2 text-sm text-gray-700 hover:text-gray-900"
                 >
-                  Standard
+                  Standard Growth Package
                 </Link>
                 <Link
                   onClick={() => setIsOpen(!open)}
                   href="/products/advanced"
                   className="block py-2 text-sm text-gray-700 hover:text-gray-900"
                 >
-                  Premium
+                  Premium Advantage Package
+                </Link>
+                <Link
+                  onClick={() => setIsOpen(!open)}
+                  href="/products/advanced"
+                  className="block py-2 text-sm text-gray-700 hover:text-gray-900"
+                >
+                  Custom Package
                 </Link>
               </div>
             )}
