@@ -15,7 +15,11 @@ const Navbar = () => {
     setServicesOpen(!servicesOpen);
     setProductsOpen(false);
   };
-
+  const toggleNav = (e: React.MouseEvent<HTMLDivElement>) => {
+    const target = e.currentTarget;
+    target.classList.toggle("open");
+    setIsOpen(!isOpen);
+  };
   const toggleProducts = () => {
     setProductsOpen(!productsOpen);
     setServicesOpen(false);
@@ -27,7 +31,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-white fixed w-full p-4 z-50">
+    <nav className="bg-white  fixed w-full p-4 z-50">
       <div className="container mx-auto flex justify-between items-center">
         <div className="flex items-center">
           <Image
@@ -41,21 +45,19 @@ const Navbar = () => {
         </div>
         <div className="flex items-center">
           <div className="md:hidden">
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-700 focus:outline-none"
-            >
-              {isOpen ? (
-                <IoMdClose className="h-6 w-6" />
-              ) : (
-                <HiMenuAlt2 className="h-6 w-6" />
-              )}
-            </button>
+            <div className="md:hidden">
+              <div id="nav-icon3" onClick={(e) => toggleNav(e)}>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
           </div>
           <div className="hidden md:flex items-center space-x-8">
             <Link href={"/"}>Home</Link>
 
-            <div className="relative">
+            {/* <div className="relative">
               <button
                 onMouseEnter={toggleServices}
                 onMouseLeave={toggleServices}
@@ -110,7 +112,7 @@ const Navbar = () => {
                   </div>
                 )}
               </button>
-            </div>
+            </div> */}
             <div className="relative">
               <button
                 onMouseEnter={toggleProducts}
@@ -149,21 +151,21 @@ const Navbar = () => {
                 )}
               </button>
             </div>
-            <a
-              href="#"
+            <Link
+              href="/about"
               className="text-gray-700 hover:text-gray-900 focus:outline-none"
             >
               About
-            </a>
-            <a
-              href="#"
+            </Link>
+            <Link
+              href="/booking"
               className="text-gray-700 hover:text-gray-900 focus:outline-none"
             >
               Contact
-            </a>
+            </Link>
           </div>
           {/* Language Change Button */}
-          <button
+          {/* <button
             onClick={() => changeLanguage()}
             className="text-gray-700 hover:text-gray-900 focus:outline-none ml-8 flex items-center"
           >
@@ -177,22 +179,26 @@ const Navbar = () => {
               className="mr-2"
             />
             <span>DE</span>
-          </button>
+          </button> */}
         </div>
       </div>
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden">
-          <div className="mt-2 px-4 py-3 bg-white shadow sm:hidden">
+        <div
+          className={`md:hidden h-full  ${
+            !isOpen ? "fade-out" : "slide-in-from-top "
+          }`}
+        >
+          <div className="mt-2 px-4 py-3 bg-slate-50 bg- h-[100vh] text-[20px] shadow sm:hidden">
             <Link onClick={() => setIsOpen(!open)} href={"/"}>
               Home
             </Link>
-            <button
+            {/* <button
               onClick={toggleServices}
               className="block py-2 text-sm text-gray-700 hover:text-gray-900 focus:outline-none"
             >
               Services
-            </button>
+            </button> */}
             {servicesOpen && (
               <div className="pl-4 transition-all">
                 <a
@@ -214,54 +220,54 @@ const Navbar = () => {
             )}
             <button
               onClick={toggleProducts}
-              className="block py-2 text-sm text-gray-700 hover:text-gray-900 focus:outline-none"
+              className="block text-left p-2 bg-orange-100 w-full py-2 text-sm text-gray-700 hover:text-gray-900 focus:outline-none"
             >
               Products
             </button>
-            {productsOpen && (
-              <div className="pl-4">
-                <Link
-                  onClick={() => setIsOpen(!open)}
-                  href="/products/basic"
-                  className="block py-2 text-sm text-gray-700 hover:text-gray-900"
-                >
-                  Basic Starter Pack
-                </Link>
-                <Link
-                  onClick={() => setIsOpen(!open)}
-                  href="/products/standard"
-                  className="block py-2 text-sm text-gray-700 hover:text-gray-900"
-                >
-                  Standard Growth Package
-                </Link>
-                <Link
-                  onClick={() => setIsOpen(!open)}
-                  href="/products/advanced"
-                  className="block py-2 text-sm text-gray-700 hover:text-gray-900"
-                >
-                  Premium Advantage Package
-                </Link>
-                <Link
-                  onClick={() => setIsOpen(!open)}
-                  href="/products/advanced"
-                  className="block py-2 text-sm text-gray-700 hover:text-gray-900"
-                >
-                  Custom Package
-                </Link>
-              </div>
-            )}
-            <a
-              href="#"
-              className="block py-2 text-sm text-gray-700 hover:text-gray-900 focus:outline-none"
+
+            <div className="pl-2 bg-slate-100 border-l-2 border-gray-200">
+              <Link
+                onClick={() => setIsOpen(!open)}
+                href="/products/basic"
+                className="block bg-slate-100 p-2 py-2  text-gray-700 hover:text-gray-900"
+              >
+                Basic Starter Pack
+              </Link>
+              <Link
+                onClick={() => setIsOpen(!open)}
+                href="/products/standard"
+                className="block bg-slate-100 p-2 py-2 text-gray-700 hover:text-gray-900"
+              >
+                Standard Growth Package
+              </Link>
+              <Link
+                onClick={() => setIsOpen(!open)}
+                href="/products/advanced"
+                className="block bg-slate-100 p-2 py-2  text-gray-700 hover:text-gray-900"
+              >
+                Premium Advantage Package
+              </Link>
+              <Link
+                onClick={() => setIsOpen(!open)}
+                href="/products/advanced"
+                className="block bg-slate-100 p-2 py-2  text-gray-700 hover:text-gray-900"
+              >
+                Custom Package
+              </Link>
+            </div>
+
+            <Link
+              href="/about"
+              className="block border-b-2  py-2 text-gray-700 hover:text-gray-900 focus:outline-none"
             >
               About
-            </a>
-            <a
-              href="#"
-              className="block py-2 text-sm text-gray-700 hover:text-gray-900 focus:outline-none"
+            </Link>
+            <Link
+              href="/booking"
+              className="block   py-2  text-gray-700 hover:text-gray-900 focus:outline-none"
             >
               Contact
-            </a>
+            </Link>
           </div>
         </div>
       )}

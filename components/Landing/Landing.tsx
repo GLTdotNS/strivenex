@@ -109,7 +109,10 @@ const Landing = () => {
                       No limit on bandwidth
                     </li>
                   </ul>
-                  <button className="block w-full py-2 text-center rounded-lg bg-gray-300 text-gray-700 cursor-not-allowed">
+                  <button
+                    onClick={() => router.push("/products/basic")}
+                    className="block w-full py-2 text-center rounded-lg bg-gradient-to-r from-orange-400 to-yellow-500 text-white font-bold hover:bg-yellow-400 transition-all duration-300"
+                  >
                     Learn more
                   </button>
                 </div>
