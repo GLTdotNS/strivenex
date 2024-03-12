@@ -5,7 +5,7 @@ import { FiChevronDown } from "react-icons/fi";
 import logo from "../../styles/logo.png";
 import Image from "next/image";
 import Link from "next/link";
-
+import { useRouter } from "next/router";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
@@ -25,21 +25,22 @@ const Navbar = () => {
     setServicesOpen(false);
   };
 
-  const changeLanguage = () => {
-    // Your logic for changing the language goes here
-    console.log("Language changed to:");
-  };
+  const router = useRouter();
 
   return (
-    <nav className="bg-white  fixed w-full p-4 z-50">
+    <nav
+      className={`bg-white  fixed w-full   z-50 ${
+        router.pathname !== "/" ? "border-b-2 " : "z-50"
+      }`}
+    >
       <div className="container mx-auto flex justify-between items-center">
         <div className="flex items-center">
-          <Image
+          <img
             height={500}
             width={500}
             src={logo.src}
             alt="Logo"
-            className="h-16 w-auto mr-4"
+            className="h-20  w-auto mt-2"
           />
           <span className="font-semibold text-lg text-gray-800"></span>
         </div>
