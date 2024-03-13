@@ -1,5 +1,5 @@
-import React from "react";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { useRouter } from "next/router";
 import bg from "../../styles/bg.png";
 import {
   FaShoppingCart,
@@ -9,14 +9,13 @@ import {
 import CustomerCountSection from "../Customers/Customers";
 import { FaRegCheckCircle, FaRegTimesCircle } from "react-icons/fa";
 import Link from "next/link";
-import { useRouter } from "next/router";
-import { useRef } from "react";
+
 import { useInView } from "react-intersection-observer";
 const Landing = () => {
   const router = useRouter();
 
   return (
-    <div className="bg-white-100">
+    <div className="bg-white">
       <header className="bg-cover bg-center text-blue-400 py-12">
         <div className="container mx-auto px-4 flex flex-col items-center md:flex-row md:items-start md:justify-between">
           <div className="max-w-md text-center md:text-left mt-24">
@@ -37,12 +36,12 @@ const Landing = () => {
                 Growing Your Business Made Simple
               </li>
             </ul>
-            <Link
-              href="/booking"
-              className="bg-gradient-to-r from-orange-300 to-orange-400 hover:from-orange-500 hover:to-orange-600 text-white font-bold py-2 px-6 rounded-lg inline-block shadow-md"
+            <button
+              onClick={() => router.push("/booking")}
+              className="hover-2 font-bold py-2 px-6 rounded-full mt-8 flex items-center transition duration-300 ease-in-out"
             >
-              Book now
-            </Link>
+              Click here to unlock your digital future
+            </button>
           </div>
 
           <img
@@ -53,7 +52,7 @@ const Landing = () => {
         </div>
       </header>
 
-      <div className="bg-gradient-to-r from-blue-50 to-blue-100  flex items-center justify-center">
+      <div className="bg-slate-50 flex items-center justify-center">
         <div className=" py-12 px-4 sm:px-6 lg:px-8 text-center text-white">
           <h1 className="text-4xl md:text-5xl text-gray-700 lg:text-6xl font-bold mb-4">
             Cutting Edge Solutions for Your Business
@@ -62,260 +61,82 @@ const Landing = () => {
             Empowering small businesses with innovative technology and
             strategies.
           </p>
-          <button className="bg-white text-blue-500 hover:bg-blue-100 text-lg font-bold py-2 px-6 rounded-full mt-8">
-            Learn More
+
+          <CustomerCountSection />
+          <button className="hover-2 p-2 border-2 text-lg w-64  border-blue-100 text-gray-700 hover:bg-blue-200  rounded-full text-center">
+            Have a quistons ?
           </button>
-          <div className="container mx-auto px-4 py-8 text-gray-700 ">
-            <div className="grid grid-cols-1  md:grid-cols-2  gap-8">
-              {/* Essential Starter Pack */}
-              <div className={`bg-white shadow-lg rounded-lg overflow-hidden`}>
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold mb-2">
-                    Basic Starter Pack
-                  </h3>
-                  <p className="text-gray-600 mb-4">
-                    Tailored for startups and small businesses, offering
-                    essential services to establish a robust online presence.{" "}
-                    <br />
-                  </p>
-                  <br />
-                  <ul className="list-disc list-inside mb-4 ">
-                    <li className="flex items-center mb-2">
-                      <FaRegCheckCircle className="text-green-500 mr-2" />
-                      Basic website setup
-                    </li>
-                    <li className="flex items-center mb-2">
-                      <FaRegCheckCircle className="text-green-500 mr-2" />
-                      Free logo design
-                    </li>
-                    <li className="flex items-center mb-2">
-                      <FaRegCheckCircle className="text-green-500 mr-2" />
-                      Social media integration
-                    </li>
-                    <li className="flex items-center mb-2">
-                      <FaRegTimesCircle className="text-red-500 mr-2" />
-                      SEO optimization
-                    </li>
-                    <li className="flex items-center mb-2">
-                      <FaRegTimesCircle className="text-red-500 mr-2" />
-                      Advanced SEO analytics
-                    </li>
-                    <li className="flex items-center mb-2">
-                      <FaRegTimesCircle className="text-red-500 mr-2" />
-                      Monthly reports
-                    </li>
-                    <li className="flex items-center mb-2">
-                      <FaRegTimesCircle className="text-red-500 mr-2" />
-                      No limit on bandwidth
-                    </li>
-                  </ul>
-                  <button
-                    onClick={() => router.push("/products/basic")}
-                    className="block w-full py-2 text-center rounded-lg bg-gradient-to-r from-orange-400 to-yellow-500 text-white font-bold hover:bg-yellow-400 transition-all duration-300"
-                  >
-                    Learn more
-                  </button>
-                </div>
-              </div>
-
-              {/* Standard Growth Package */}
-              <div className="bg-white shadow-lg rounded-lg overflow-hidden slide-in-from-right ">
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold mb-2">
-                    Standard Growth Package
-                  </h3>
-                  <p className="text-gray-600 mb-4">
-                    Designed for businesses looking to expand their reach.
-                    Offers standard marketing and growth-oriented services.
-                  </p>
-                  <br />
-                  <ul className="list-disc list-inside mb-4">
-                    <li className="flex items-center mb-2">
-                      <FaRegCheckCircle className="text-green-500 mr-2" />
-                      Advanced website setup
-                    </li>
-                    <li className="flex items-center mb-2">
-                      <FaRegCheckCircle className="text-green-500 mr-2" />
-                      Free logo design
-                    </li>
-                    <li className="flex items-center mb-2">
-                      <FaRegCheckCircle className="text-green-500 mr-2" />
-                      Social media integration
-                    </li>
-                    <li className="flex items-center mb-2">
-                      <FaRegCheckCircle className="text-green-500 mr-2" />
-                      SEO optimization
-                    </li>
-                    <li className="flex items-center mb-2">
-                      <FaRegTimesCircle className="text-red-500 mr-2" />
-                      Advanced SEO analytics
-                    </li>
-                    <li className="flex items-center mb-2">
-                      <FaRegTimesCircle className="text-red-500 mr-2" />
-                      Monthly reports
-                    </li>
-                    <li className="flex items-center mb-2">
-                      <FaRegTimesCircle className="text-red-500 mr-2" />
-                      Unlimited bandwidth
-                    </li>
-                  </ul>
-                  <button
-                    onClick={() => router.push("/products/standard")}
-                    className="block w-full py-2 text-center rounded-lg bg-gradient-to-r from-orange-400 to-yellow-500 text-white font-bold hover:bg-yellow-400 transition-all duration-300"
-                  >
-                    Learn more
-                  </button>
-                </div>
-              </div>
-
-              {/* Advanced Advantage Package */}
-              <div className="bg-white shadow-lg rounded-lg overflow-hidden">
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold mb-2">
-                    Premium Advantage Package
-                  </h3>
-                  <p className="text-gray-600 mb-4">
-                    Tailored for businesses seeking a competitive edge. Provides
-                    advanced marketing strategies and optimization services.
-                  </p>
-                  <ul className="list-disc list-inside mb-4">
-                    <li className="flex items-center mb-2">
-                      <FaRegCheckCircle className="text-green-500 mr-2" />
-                      Advanced website setup
-                    </li>
-                    <li className="flex items-center mb-2">
-                      <FaRegCheckCircle className="text-green-500 mr-2" />
-                      Free logo design
-                    </li>
-                    <li className="flex items-center mb-2">
-                      <FaRegCheckCircle className="text-green-500 mr-2" />
-                      Social media integration
-                    </li>
-                    <li className="flex items-center mb-2">
-                      <FaRegCheckCircle className="text-green-500 mr-2" />
-                      SEO optimization
-                    </li>
-                    <li className="flex items-center mb-2">
-                      <FaRegCheckCircle className="text-green-500 mr-2" />
-                      Advanced SEO analytics
-                    </li>
-                    <li className="flex items-center mb-2">
-                      <FaRegCheckCircle className="text-green-500  mr-2" />
-                      Monthly reports
-                    </li>
-                    <li className="flex items-center mb-2">
-                      <FaRegCheckCircle className="text-green-500  mr-2" />
-                      No limit on bandwidth
-                    </li>
-                  </ul>
-                  <button
-                    onClick={() => router.push("/products/advanced")}
-                    className="block w-full py-2 text-center rounded-lg bg-gradient-to-r from-orange-400 to-yellow-500 text-white font-bold hover:bg-yellow-400 transition-all duration-300"
-                  >
-                    Learn more
-                  </button>
-                </div>
-              </div>
-              <div className="bg-white shadow-lg rounded-lg overflow-hidden">
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold mb-2">Custom Package</h3>
-                  <p className="text-gray-600 mb-4">
-                    Tailored to fit your specific business needs. Choose your
-                    desired features and services.
-                  </p>
-                  <br />
-                  <ul className="list-disc list-inside mb-4">
-                    {/* Add your custom options here */}
-                    <li className="flex items-center mb-2">
-                      <FaRegCheckCircle className="text-green-500 mr-2" />
-                      Custom feature
-                    </li>
-                    <li className="flex items-center mb-2">
-                      <FaRegCheckCircle className="text-green-500 mr-2" />
-                      Custom feature
-                    </li>
-                    <li className="flex items-center mb-2">
-                      <FaRegCheckCircle className="text-green-500 mr-2" />
-                      Custom feature
-                    </li>
-                    <li className="flex items-center mb-2">
-                      <FaRegCheckCircle className="text-green-500 mr-2" />
-                      Custom feature
-                    </li>
-                    <li className="flex items-center mb-2">
-                      <FaRegCheckCircle className="text-green-500 mr-2" />
-                      Custom feature
-                    </li>
-                    <li className="flex items-center mb-2">
-                      <FaRegCheckCircle className="text-green-500 mr-2" />
-                      Custom feature
-                    </li>
-                    <li className="flex items-center mb-2">
-                      <FaRegCheckCircle className="text-green-500 mr-2" />
-                      Custom feature
-                    </li>
-                  </ul>
-                  <button
-                    onClick={() => router.push("/products/custom")}
-                    className="block w-full py-2 text-center rounded-lg bg-gradient-to-r from-orange-400 to-yellow-500 text-white font-bold hover:bg-yellow-400 transition-all duration-300"
-                  >
-                    Learn more
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
 
-      <CustomerCountSection />
-      <section className="py-16 bg-slate-100">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-8">
-            Our Solutions for Small Businesses
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-slate-50 rounded-lg p-12 shadow-md">
-              <h3 className="text-xl font-bold mb-4">E-commerce Integration</h3>
-              <FaShoppingCart
-                size={150}
-                className="mx-auto mb-4 text-blue-500"
-              />
-              <p>
-                Boost your sales with our e-commerce integration solutions,
-                allowing you to purchase websites or services for your business
-                effortlessly.
-              </p>
-            </div>
-            <div className="bg-slate-50 rounded-lg p-12 shadow-md">
-              <h3 className="text-xl font-bold mb-4">Local SEO Optimization</h3>
-              <FaMapMarkerAlt
-                size={150}
-                className="mx-auto mb-4 text-green-500"
-              />
-              <p>
-                Enhance your visibility in local searches and attract more
-                customers from your area with our local SEO optimization
-                services.
-              </p>
-            </div>
-            <div className="bg-slate-50 rounded-lg p-12 shadow-md">
-              <h3 className="text-xl font-bold mb-4">Social Media Marketing</h3>
-              <FaFacebookSquare
-                size={150}
-                className="mx-auto mb-4 text-indigo-500"
-              />
-              <p>
-                Enhance your brand presence and engagement with potential
-                customers through targeted social media marketing campaigns
-                tailored for small businesses.
-              </p>
-            </div>
-          </div>
+      <div className="max-w-7xl mx-auto px-4 py-8 flex flex-col lg:flex-row items-center">
+        {/* Technologies Icons */}
+        <div className="flex flex-wrap justify-center lg:justify-start lg:mr-8">
+          <img
+            src="technology1.png"
+            alt="Technology 1"
+            className="w-12 h-12 rounded-full mb-2 mx-2"
+          />
+          <img
+            src="technology2.png"
+            alt="Technology 2"
+            className="w-12 h-12 rounded-full mb-2 mx-2"
+          />
+          <img
+            src="technology3.png"
+            alt="Technology 3"
+            className="w-12 h-12 rounded-full mb-2 mx-2"
+          />
+          <img
+            src="technology4.png"
+            alt="Technology 4"
+            className="w-12 h-12 rounded-full mb-2 mx-2"
+          />
+          <img
+            src="technology5.png"
+            alt="Technology 5"
+            className="w-12 h-12 rounded-full mb-2 mx-2"
+          />
+          <img
+            src="technology6.png"
+            alt="Technology 6"
+            className="w-12 h-12 rounded-full mb-2 mx-2"
+          />
+          <img
+            src="technology7.png"
+            alt="Technology 7"
+            className="w-12 h-12 rounded-full mb-2 mx-2"
+          />
+          <img
+            src="technology8.png"
+            alt="Technology 8"
+            className="w-12 h-12 rounded-full mb-2 mx-2"
+          />
+          <img
+            src="technology9.png"
+            alt="Technology 9"
+            className="w-12 h-12 rounded-full mb-2 mx-2"
+          />
+          <img
+            src="technology10.png"
+            alt="Technology 10"
+            className="w-12 h-12 rounded-full mb-2 mx-2"
+          />
         </div>
-      </section>
 
-      <section className="py-16 bg-slate-100">
+        {/* Strong Message */}
+        <div className="flex flex-col lg:max-w-md">
+          <h2 className="text-3xl font-bold text-center lg:text-left mb-4">
+            Empowering Your Business with Cutting-Edge Technologies
+          </h2>
+          <p className="text-lg text-center lg:text-left">
+            We utilize a wide range of innovative technologies to build robust
+            and scalable solutions that meet the unique needs of your business.
+            From frontend frameworks to backend databases, weve got you covered.
+          </p>
+        </div>
+      </div>
+      <section className="py-16 bg-slate-50">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold mb-8">Why Choose Our Platform?</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

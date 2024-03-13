@@ -1,114 +1,53 @@
 import React from "react";
 import logo from "../../styles/transparent.png";
-
+import img from "../../styles/footer.png";
+import Getstarted from "../GetStarted/Getstarted";
+import Link from "next/link";
 const Footer = () => {
   return (
-    <footer className="bg-gray-600 text-white py-12 p-12">
-      <div className="container mx-auto">
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
-          <div className="col-span-2 md:col-span-1">
-            <h3 className="text-xl font-bold mb-4">
-              <img src={logo.src} />
-            </h3>
-            <p className="mb-4">A brief description of the company.</p>
-            <ul>
-              <li>
-                <a href="#" className="text-gray-400 hover:text-white">
-                  About Us
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-400 hover:text-white">
-                  Contact Us
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-400 hover:text-white">
-                  Careers
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h3 className="text-xl font-bold mb-4">Services</h3>
-            <ul>
-              <li>
-                <a href="#" className="text-gray-400 hover:text-white">
-                  Service 1
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-400 hover:text-white">
-                  Service 2
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-400 hover:text-white">
-                  Service 3
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h3 className="text-xl font-bold mb-4">Resources</h3>
-            <ul>
-              <li>
-                <a href="#" className="text-gray-400 hover:text-white">
-                  Blog
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-400 hover:text-white">
-                  FAQs
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-400 hover:text-white">
-                  Support
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h3 className="text-xl font-bold mb-4">Legal</h3>
-            <ul>
-              <li>
-                <a href="#" className="text-gray-400 hover:text-white">
-                  Privacy Policy
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-400 hover:text-white">
-                  Terms of Service
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h3 className="text-xl font-bold mb-4">Follow Us</h3>
-            <ul>
-              <li>
-                <a href="#" className="text-gray-400 hover:text-white">
-                  Facebook
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-400 hover:text-white">
-                  Twitter
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-400 hover:text-white">
-                  LinkedIn
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <hr className="border-gray-700 my-8" />
-        <p className="text-center text-gray-400">
-          &copy; 2024 THRIVE Salutions. All rights reserved.
-        </p>
+    <footer
+      className="bg-slate-50 font-bold text-gray-700 py-6 px-4 border-t-2"
+      style={{
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        backgroundAttachment: "fixed",
+      }}
+    >
+      <div className="container mx-auto flex flex-col lg:flex-row justify-between items-center">
+        <Getstarted />
+
+        <ul className="flex justify-center lg:justify-end mt-4 lg:mt-0 border-2 rounded p-2 mb-12">
+          <li className="mx-2">
+            <Link href="/" className="hover-1">
+              Home
+            </Link>
+          </li>
+          <li className="mx-2">
+            <Link href="/about" className="hover-1 border-2-b">
+              About
+            </Link>
+          </li>
+          <li className="mx-2">
+            <Link href="/about#contact" className="hover-1 ">
+              Contact
+            </Link>
+          </li>
+          <li className="mx-2">
+            <Link href="/terms" className="hover-1">
+              ToS
+            </Link>
+          </li>
+          <li className="mx-2">
+            <Link href="/privacy" className="hover-1">
+              Privacy
+            </Link>
+          </li>
+        </ul>
+      </div>
+      <div className="w-full h-full text-center border-t-2">
+        <span className="text-center p-2">All rights reserved |</span>
+        <span>StriveNex, Berlin, De</span>
       </div>
     </footer>
   );

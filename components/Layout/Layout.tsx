@@ -16,7 +16,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       <CookieBanner />
       <Navbar />
       {children}
-      <Getstarted />
+
       <Footer />
     </div>
   );

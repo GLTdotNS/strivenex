@@ -3,7 +3,7 @@ import cover from "../styles/strive.png";
 import rocket from "../styles/rocket.png";
 const AboutUsPage: React.FC = () => {
   return (
-    <div className="container mx-auto px-[1px] p-24">
+    <div className="container mx-auto px-[1px] p-24 page fade-in">
       {/* Hero Section */}
       <section>
         {/* Cover Photo */}
@@ -137,7 +137,10 @@ const AboutUsPage: React.FC = () => {
         </p>
       </section>
 
-      <section className="py-12  bg-slate-100  text-gray-500 text-center">
+      <section
+        className="py-12  bg-slate-100  text-gray-500 text-center"
+        id="contact"
+      >
         <div className="container mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Contact Us</h2>
           <p className="text-lg md:text-xl">

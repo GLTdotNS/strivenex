@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.18",
+    "@heroicons/react": "^2.1.1",
     "@types/node": "20.11.20",
     "@types/react": "18.2.60",
     "@types/react-dom": "18.2.19",
@@ -23,6 +25,7 @@
     "react-phone-number-input": "^3.3.9",
     "react-select": "^5.8.0",
     "react-select-country-list": "^2.2.3",
+    "sass": "^1.71.1",
     "typescript": "5.3.3"
   },
   "devDependencies": {

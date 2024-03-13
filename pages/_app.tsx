@@ -1,15 +1,15 @@
 import Layout from "../components/Layout/Layout";
-import "../styles/globals.css";
+import "../styles/globals.scss";
 import type { AppProps } from "next/app";
 import Router from "next/router";
 import "nprogress/nprogress.css";
 import NProgress from "nprogress";
+import Cursor from "../components/Cursor/Cursor";
 
 import { useState, useEffect } from "react";
 import Loading from "../components/Loading/Loading";
 export default function App({ Component, pageProps }: AppProps) {
   // const CrispWithNoSSR = dynamic(() => import("../components/crisp"));
-
   const [loading, setLoading] = useState<boolean>(false);
 
   useEffect(() => {
@@ -53,6 +53,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <Loading />
       ) : (
         <Layout>
+          <Cursor />
           <Component {...pageProps} />
         </Layout>
       )}
