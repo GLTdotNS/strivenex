@@ -16,11 +16,10 @@ const Navbar: React.FC = () => {
           <h1 className="text-sm p-2 ">We support Ukraine</h1>
         </div>
         <div className="max-w-7xl mx-auto flex items-center justify-between">
-          {/* Left Logo */}
           <div className="flex items-center ">
             <Link href={"/"}>
               {" "}
-              <img src={logo.src} alt="Logo" className="h-10 mr-4 h-12" />
+              <img src={logo.src} alt="Logo" className="mr-4 h-16 mt-4" />
             </Link>
           </div>
           <div className="hidden lg:flex uppercase flex-grow justify-center">
@@ -78,7 +77,7 @@ const Navbar: React.FC = () => {
             <img
               src={logo.src}
               alt=""
-              className="fixed top-[0px] left-0 h-24"
+              className="fixed top-[17px] left-0 h-24"
             />
             <Link href={"/"} className="text-gray-800 hover:text-gray-600 mx-4">
               Home
