@@ -11,16 +11,9 @@ import adobe from "../../styles/adobe.png";
 import tailwind from "../../styles/Tailwind_1.png";
 import mui from "../../styles/MUI_1.png";
 import next from "../../styles/nextjs.png";
-import {
-  FaShoppingCart,
-  FaMapMarkerAlt,
-  FaFacebookSquare,
-} from "react-icons/fa";
-import CustomerCountSection from "../Customers/Customers";
-import { FaRegCheckCircle, FaRegTimesCircle } from "react-icons/fa";
-import Link from "next/link";
 
-import { useInView } from "react-intersection-observer";
+import CustomerCountSection from "../Customers/Customers";
+
 const Landing = () => {
   const router = useRouter();
 
@@ -55,7 +48,7 @@ const Landing = () => {
           </div>
 
           <img
-            className="mt-2 md:mt-0 md:w-[40%] sm:w-full"
+            className="mt-12 md:mt-12 md:w-[40%] sm:w-full"
             src={bg.src}
             alt="Platform"
           />
