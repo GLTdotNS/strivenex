@@ -99,7 +99,7 @@ const ContactPage = () => {
                         id="email"
                         name="email"
                         className="w-full border-sky-600 p-4 border rounded-full shadow-sm focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-400 focus:ring-opacity-50"
-                        placeholder="Your Email"
+                        placeholder="John Doe"
                         value={formData.email}
                         onChange={handleChange}
                       />
