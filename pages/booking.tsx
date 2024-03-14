@@ -122,8 +122,8 @@ const BuyNowPage = () => {
     <div className="min-h-screen bg-white-50 flex lg:p-8 sm:mt-2 lg:mt-0 justify-center items-center fade-in font-serif spacing-4">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full ">
         {/* Left side column */}
-        <div className="lg:p-24 rounded-lg  lg:border-r-2">
-          <h2 className="text-3xl  uppercase mt-28 ">
+        <div className="lg:p-24 rounded-lg  lg:border-r-2 p-4">
+          <h2 className="text-3xl  uppercase mt-36 ">
             Ready to kick-start your project?{" "}
           </h2>
 
