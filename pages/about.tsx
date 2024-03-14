@@ -1,6 +1,7 @@
 import React from "react";
 import cover from "../styles/strive.png";
 import rocket from "../styles/rocket.png";
+import { FaCheckCircle } from "react-icons/fa";
 const AboutUsPage: React.FC = () => {
   return (
     <div className="container mx-auto px-[1px] p-24 page fade-in">
@@ -89,87 +90,72 @@ const AboutUsPage: React.FC = () => {
           </div>
         </section>
       </section>
-
-      <section className=" mx-auto bg-gradient-to-b from-blue-100 to-slate-100 mb-24 p-4 lg:w-[70%]">
+      <section className="mx-auto mb-24 p-4 lg:w-[70%]">
         <h1 className="text-center text-[24px]">Who we are ?</h1>
-        <p className="p-2 mt-2 w-full">
-          Welcome to StriveNex, your trusted partner in building powerful online
-          presences and maximizing digital success. At StriveNex, we are
-          passionate about crafting stunning websites, optimizing search engine
-          visibility, and delivering tailored solutions that exceed your
-          expectations.
-        </p>
-        <p className="p-2 mt-2 w-full">
-          StriveNex is more than just a web development agency; we are your
-          dedicated allies in the digital landscape. With a keen understanding
-          of your needs and objectives, we collaborate closely with you to
-          create websites that not only look exceptional but also drive results.
-          From sleek and user-friendly designs to robust e-commerce platforms,
-          we specialize in bringing your vision to life.
-        </p>
-        <p className="p-2 mt-2 w-full">
-          In today&apos;s competitive online environment, visibility is key.
-          That&apos;s where our expertise in search engine optimization (SEO)
-          comes into play. We utilize cutting-edge strategies and industry best
-          practices to enhance your website&apos;s ranking and attract more
-          organic traffic. With our proven SEO techniques, your business can
-          stand out from the crowd and reach its full potential.
-        </p>
-        <p className="p-2 mt-2 w-full">
-          What sets us apart at StriveNex is our unwavering commitment to
-          understanding your unique needs and goals. We take the time to listen,
-          learn, and adapt our approach to ensure your satisfaction at every
-          step of the process. Your success is our priority, and we are
-          dedicated to delivering results that propel your business forward.
-        </p>
-        <p className="p-2 mt-2 w-full">
-          Whether you are a small startup or a large corporation, we have the
-          expertise and resources to help you thrive in the digital age. With
-          our comprehensive suite of services, including web development, SEO,
-          and ongoing support, you can trust StriveNex to be your partner in
-          success.
-        </p>
-        <p className="p-2 mt-2 w-full">
-          Join forces with StriveNex today and experience the difference our
-          passion, expertise, and dedication can make for your business.
-          Let&apos;s elevate your online presence, drive meaningful growth, and
-          embark on a journey towards digital success together.
-        </p>
-      </section>
-
-      <section
-        className="py-12  bg-slate-100  text-gray-500 text-center"
-        id="contact"
-      >
-        <div className="container mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Contact Us</h2>
-          <p className="text-lg md:text-xl">
-            Have questions or want to learn more? Reach out to us!
-          </p>
-          {/* Contact Form */}
-          <form className="mt-8 max-w-md mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <input
-                type="text"
-                className="bg-white rounded-md px-4 py-2 outline-none"
-                placeholder="Your Name"
-              />
-              <input
-                type="email"
-                className="bg-white rounded-md px-4 py-2 outline-none"
-                placeholder="Your Email"
-              />
-            </div>
-            <textarea
-              className="mt-4 bg-white rounded-md px-4 py-2 outline-none w-full"
-              placeholder="Your Message"
-              rows={6}
-            ></textarea>
-            <button className="mt-6 bg-white text-gray-800 font-semibold py-3 px-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
-              Send Message
-            </button>
-          </form>
-        </div>
+        <ul className="list-disc list-inside">
+          <li className="p-2 mt-2 w-full flex items-start">
+            <span className="text-5xl mr-4">🤗</span>
+            <span>
+              Welcome to StriveNex, your trusted partner in building powerful
+              online presences and maximizing digital success. At StriveNex, we
+              understand the unique needs and challenges faced by small
+              businesses. Our mission is to provide tailored solutions that help
+              small businesses thrive in the digital age.
+            </span>
+          </li>
+          <li className="p-2 mt-2 w-full flex items-start">
+            <span className="text-5xl mr-4">🚀</span>
+            <span>
+              With StriveNex, you&apos;re not just getting a service provider –
+              you&apos;re gaining a committed ally dedicated to your small
+              business&apos;s success. We collaborate closely with you to create
+              websites that not only look exceptional but also drive results,
+              empowering your small business to stand out online.
+            </span>
+          </li>
+          <li className="p-2 mt-2 w-full flex items-start">
+            <span className="text-5xl mr-4">🔍</span>
+            <span>
+              In today&apos;s competitive online environment, visibility is
+              crucial for small businesses. That&apos;s where our expertise in
+              search engine optimization (SEO) comes in. We utilize cutting-edge
+              strategies to enhance your website&apos;s visibility and attract
+              more organic traffic, helping your small business reach its full
+              potential.
+            </span>
+          </li>
+          <li className="p-2 mt-2 w-full flex items-start">
+            <span className="text-5xl mr-4">🎯</span>
+            <span>
+              At StriveNex, we&apos;re committed to understanding your unique
+              needs and goals as a small business owner. We take the time to
+              listen, learn, and adapt our approach to ensure your satisfaction
+              at every step of the process. Your success is our priority, and
+              we&apos;re dedicated to delivering results that propel your small
+              business forward.
+            </span>
+          </li>
+          <li className="p-2 mt-2 w-full flex items-start">
+            <span className="text-5xl mr-4">💼</span>
+            <span>
+              Whether you&apos;re a fledgling startup or an established small
+              business, we have the expertise and resources to help you thrive.
+              From web development to SEO and ongoing support, our comprehensive
+              suite of services is tailored to meet the unique needs of small
+              businesses, empowering your growth and success.
+            </span>
+          </li>
+          <li className="p-2 mt-2 w-full flex items-start">
+            <span className="text-5xl mr-4">🤝</span>
+            <span>
+              Join forces with StriveNex today and experience the difference our
+              passion, expertise, and dedication can make for your small
+              business. Let&apos;s elevate your online presence, drive
+              meaningful growth, and embark on a journey towards digital success
+              together.
+            </span>
+          </li>
+        </ul>
       </section>
     </div>
   );
