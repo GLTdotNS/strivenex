@@ -39,7 +39,7 @@ export default async function handler(
       const info = await transporter.sendMail({
         from: "georgitonkow@gmail.com",
         to: "noncreativeblog@gmail.com",
-        subject: "New Message from Contact Form",
+        subject: "Strive from Booking Form",
         html: `
           <p><strong>Name:</strong> ${firstName} ${lastName}</p>
           <p><strong>Company Name:</strong> ${companyName}</p>

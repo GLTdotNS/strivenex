@@ -169,12 +169,10 @@ const BuyNowPage = () => {
                           name="firstName"
                           value={formData.firstName}
                           onChange={handleInputChange}
-                          className="w-full border-gray-300 border rounded-md shadow-sm focus:border-blue-400 focus:ring focus:ring-blue-400 focus:ring-opacity-50"
+                          className="w-full border-sky-600 p-4 border rounded-full shadow-sm focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-400 focus:ring-opacity-50"
                           required
+                          placeholder="John "
                         />
-                        {validData.firstName && (
-                          <FaRegCheckCircle className="absolute right-3 top-3 text-green-500" />
-                        )}
                       </div>
                       <div>
                         <label
@@ -189,12 +187,10 @@ const BuyNowPage = () => {
                           name="lastName"
                           value={formData.lastName}
                           onChange={handleInputChange}
-                          className="w-full border-gray-300 border rounded-md shadow-sm focus:border-blue-400 focus:ring focus:ring-blue-400 focus:ring-opacity-50"
+                          className="w-full border-sky-600 p-4 border rounded-full shadow-sm focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-400 focus:ring-opacity-50"
                           required
+                          placeholder="Doe"
                         />
-                        {validData.lastName && (
-                          <FaRegCheckCircle className="absolute right-3 top-3 text-green-500" />
-                        )}
                       </div>
                     </div>
 
@@ -212,12 +208,10 @@ const BuyNowPage = () => {
                           name="companyName"
                           value={formData.companyName}
                           onChange={handleInputChange}
-                          className="w-full border-gray-300 border rounded-md shadow-sm focus:border-blue-400 focus:ring focus:ring-blue-400 focus:ring-opacity-50"
+                          className="w-full border-sky-600 p-4 border rounded-full shadow-sm focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-400 focus:ring-opacity-50"
                           required
+                          placeholder="StriveNex ltd"
                         />
-                        {validData.companyName && (
-                          <FaRegCheckCircle className="absolute right-3 top-3 text-green-500" />
-                        )}
                       </div>
                       <div>
                         <label
@@ -232,12 +226,10 @@ const BuyNowPage = () => {
                           name="branch"
                           value={formData.branch}
                           onChange={handleInputChange}
-                          className="w-full border-gray-300 border rounded-md shadow-sm focus:border-blue-400 focus:ring focus:ring-blue-400 focus:ring-opacity-50"
+                          className="w-full border-sky-600 p-4 border rounded-full shadow-sm focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-400 focus:ring-opacity-50"
                           required
+                          placeholder="Culinary arts"
                         />
-                        {validData.branch && (
-                          <FaRegCheckCircle className="absolute right-3 top-3 text-green-500" />
-                        )}
                       </div>
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -253,7 +245,7 @@ const BuyNowPage = () => {
                           name="employees"
                           value={formData.employees}
                           onChange={handleInputChange}
-                          className="w-full border-gray-300 border rounded-md shadow-sm focus:border-blue-400 focus:ring focus:ring-blue-400 focus:ring-opacity-50"
+                          className="w-full border-sky-600 p-4 border rounded-full shadow-sm focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-400 focus:ring-opacity-50"
                           required
                         >
                           <option value="">Select Number of Employees</option>
@@ -261,9 +253,6 @@ const BuyNowPage = () => {
                           <option value="5-20">5-20</option>
                           <option value="20+">20+</option>
                         </select>
-                        {validData.employees && (
-                          <FaRegCheckCircle className="absolute right-3 top-3 text-green-500" />
-                        )}
                       </div>
                       <div className="grid grid-cols-1 sm:grid-cols- gap-6">
                         <div>
@@ -279,9 +268,9 @@ const BuyNowPage = () => {
                             name="budget"
                             value={formData.budget}
                             onChange={handleInputChange}
-                            className="w-full h-10 outline-none border-gray-300 border rounded-md shadow-sm focus:border-blue-400 focus:ring focus:ring-blue-400 focus:ring-opacity-50"
+                            className="w-full border-sky-600 p-4 border rounded-full shadow-sm focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-400 focus:ring-opacity-50"
                             required
-                            placeholder="500€"
+                            placeholder="Between 500€ and 1,500€"
                           />
                         </div>
                       </div>
@@ -300,12 +289,10 @@ const BuyNowPage = () => {
                           name="email"
                           value={formData.email}
                           onChange={handleInputChange}
-                          className="w-full h-10 outline-none border-gray-300 border rounded-md shadow-sm focus:border-blue-400 focus:ring focus:ring-blue-400 focus:ring-opacity-50"
+                          className="w-full border-sky-600 p-4 border rounded-full shadow-sm focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-400 focus:ring-opacity-50"
                           required
+                          placeholder="johndoe@gmail.com"
                         />
-                        {validData.email && (
-                          <FaRegCheckCircle className="absolute right-3 top-3 text-green-500" />
-                        )}
                       </div>
                       <div>
                         <label
@@ -315,11 +302,19 @@ const BuyNowPage = () => {
                           Country
                         </label>
                         <Select
+                          styles={{
+                            control: (baseStyles, state) => ({
+                              ...baseStyles,
+                              borderColor: state.isFocused
+                                ? "transparent"
+                                : "transparent",
+                            }),
+                          }}
                           placeholder="Select Country"
                           value={formData.country}
                           onChange={handleCountryChange}
                           options={options}
-                          className="w-full border-gray-300 border rounded-md shadow-sm focus:border-blue-400 focus:ring focus:ring-blue-400 focus:ring-opacity-50"
+                          className="w-full border-sky-600 p-4 border rounded-full shadow-sm "
                           required
                         />
                       </div>
@@ -343,11 +338,8 @@ const BuyNowPage = () => {
                             })
                           }
                           required
-                          className="w-full h-10 outline-none border-gray-300 border rounded-md shadow-sm focus:border-blue-400 focus:ring focus:ring-blue-400 focus:ring-opacity-50"
+                          className="w-full border-sky-600 p-4 border rounded-full shadow-sm focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-400 focus:ring-opacity-50"
                         />
-                        {validData.phoneNumber && (
-                          <FaRegCheckCircle className="absolute right-3 top-3 text-green-500" />
-                        )}
                       </div>
                       <div>
                         <label
@@ -362,11 +354,8 @@ const BuyNowPage = () => {
                           value={formData.description}
                           onChange={handleTextareaChange} // Changed to handleTextareaChange
                           rows={4}
-                          className="w-full border-gray-300 border rounded-md shadow-sm focus:border-blue-400 focus:ring focus:ring-blue-400 focus:ring-opacity-50"
+                          className="w-full border-sky-600 p-4 border rounded-md shadow-sm focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-400 focus:ring-opacity-50"
                         />
-                        {validData.description && (
-                          <FaRegCheckCircle className="absolute right-3 bottom-3 text-green-500" />
-                        )}
                       </div>
                     </div>
                     <button

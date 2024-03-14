@@ -2,7 +2,7 @@ import React from "react";
 
 const SuccessMessage = () => {
   return (
-    <div className="h-[500px]">
+    <div className="flex h-[500px] items-center text-3xl justify-center">
       <p className="">Success! Your message has been sent.</p>
     </div>
   );

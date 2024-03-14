@@ -32,7 +32,7 @@ const Navbar: React.FC = () => {
             About
           </Link>
           <Link
-            href={"/booking"}
+            href={"/contact"}
             className="text-gray-800 hover:text-gray-600 mx-4 hover-1"
           >
             Contact
@@ -81,7 +81,7 @@ const Navbar: React.FC = () => {
             About
           </Link>
           <Link
-            href={"/booking"}
+            href={"/contact"}
             className="text-gray-800 hover:text-gray-600 mx-4 mt-2"
           >
             Contact

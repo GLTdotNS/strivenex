@@ -1,6 +1,16 @@
 import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/router";
 import bg from "../../styles/bg.png";
+import vercel from "../../styles/Vercel_1.png";
+import three from "../../styles/ThreeJS_1.png";
+import sanity from "../../styles/Sanity_io_1.png";
+import stripe from "../../styles/stripe.png";
+import shopify from "../../styles/shopify_1.png";
+import figma from "../../styles/Figma_1.png";
+import adobe from "../../styles/adobe.png";
+import tailwind from "../../styles/Tailwind_1.png";
+import mui from "../../styles/MUI_1.png";
+import next from "../../styles/nextjs.png";
 import {
   FaShoppingCart,
   FaMapMarkerAlt,
@@ -76,54 +86,54 @@ const Landing = () => {
         {/* Technologies Icons */}
         <div className="flex flex-wrap justify-center lg:justify-start lg:mr-8">
           <img
-            src="technology1.png"
+            src={next.src}
             alt="Technology 1"
-            className="w-12 h-12 rounded-full mb-2 mx-2"
+            className="w-24 h-24 rounded-full mb-2 mx-2"
           />
           <img
-            src="technology2.png"
+            src={three.src}
             alt="Technology 2"
-            className="w-12 h-12 rounded-full mb-2 mx-2"
+            className="w-24 h-24 rounded-full mb-2 mx-2"
           />
           <img
-            src="technology3.png"
+            src={vercel.src}
             alt="Technology 3"
-            className="w-12 h-12 rounded-full mb-2 mx-2"
+            className="w-24 h-24 rounded-full mb-2 mx-2"
           />
           <img
-            src="technology4.png"
+            src={sanity.src}
             alt="Technology 4"
-            className="w-12 h-12 rounded-full mb-2 mx-2"
+            className="w-36 h-34 rounded-full mb-2 mx-2"
           />
           <img
-            src="technology5.png"
-            alt="Technology 5"
-            className="w-12 h-12 rounded-full mb-2 mx-2"
-          />
-          <img
-            src="technology6.png"
-            alt="Technology 6"
-            className="w-12 h-12 rounded-full mb-2 mx-2"
-          />
-          <img
-            src="technology7.png"
-            alt="Technology 7"
-            className="w-12 h-12 rounded-full mb-2 mx-2"
-          />
-          <img
-            src="technology8.png"
-            alt="Technology 8"
-            className="w-12 h-12 rounded-full mb-2 mx-2"
-          />
-          <img
-            src="technology9.png"
-            alt="Technology 9"
-            className="w-12 h-12 rounded-full mb-2 mx-2"
-          />
-          <img
-            src="technology10.png"
+            src={stripe.src}
             alt="Technology 10"
-            className="w-12 h-12 rounded-full mb-2 mx-2"
+            className="w-24 h-24 rounded-full mb-2 mx-2"
+          />
+          <img
+            src={shopify.src}
+            alt="Technology 5"
+            className="w-36 h-24 rounded-full mb-2 mx-2"
+          />
+          <img
+            src={figma.src}
+            alt="Technology 6"
+            className="w-34 h-24 rounded-full mb-2 mx-2"
+          />
+          <img
+            src={adobe.src}
+            alt="Technology 7"
+            className="w-34 h-24 rounded-full mb-2 mx-2"
+          />
+          <img
+            src={tailwind.src}
+            alt="Technology 8"
+            className="w-24 h-24 rounded-full mb-2 mx-2"
+          />
+          <img
+            src={mui.src}
+            alt="Technology 9"
+            className="w-24 h-24 rounded-full mb-2 mx-2"
           />
         </div>
 
@@ -139,44 +149,61 @@ const Landing = () => {
           </p>
         </div>
       </div>
-      <section className="py-16 bg-slate-50">
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-8">Why Choose Our Platform?</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-white rounded-lg p-12 shadow-md">
-              <h3 className="text-xl font-bold mb-4">Free hosting</h3>
-              <img
-                style={{ height: "60%", width: "100%" }}
-                src="https://cdn.mos.cms.futurecdn.net/NQ4xeRKDaREYqtUg9n8xGc.jpg"
-              />
-              <p>
-                Experience the convenience of hosting your website for free,
-                ensuring it remains accessible online without any additional
-                costs or complications.
-              </p>
+          <h2 className="text-3xl font-bold text-center text-gray-800 mb-8">
+            Why Choose Our Platform?
+          </h2>
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div className="rounded-lg overflow-hidden shadow-sm bg-white border-t-4 border-blue-500 flex flex-col justify-center items-center">
+              <div className="p-6 text-center">
+                <h3 className="text-xl font-bold mb-4 text-blue-500">
+                  Free Hosting
+                </h3>
+                <img
+                  className=" w-auto object-cover"
+                  src="https://cdn.mos.cms.futurecdn.net/NQ4xeRKDaREYqtUg9n8xGc.jpg"
+                  alt="Free Hosting"
+                />
+                <p className="text-gray-800 mt-4">
+                  Experience the convenience of hosting your website for free,
+                  ensuring it remains accessible online without any additional
+                  costs or complications.
+                </p>
+              </div>
             </div>
-            <div className="bg-white rounded-lg p-12  shadow-md">
-              <h3 className="text-xl font-bold mb-4">Customizable</h3>
-              <img
-                style={{ height: "60%", width: "100%" }}
-                src="https://assets-global.website-files.com/60f85e33b5a89c61fcd8377d/61c2715b711f0121a48ed747_Designstripe-Customizable%20Graphics-min.png"
-              />
-              <p>
-                Customize your website to reflect your brand identity with our
-                wide range of templates, colors, fonts, and layout options.
-              </p>
+            <div className="rounded-lg overflow-hidden shadow-sm bg-white border-t-4 border-yellow-500 flex flex-col justify-center items-center">
+              <div className="p-6 text-center">
+                <h3 className="text-xl font-bold mb-4 text-yellow-500">
+                  Customizable
+                </h3>
+                <img
+                  className=" w-auto object-cover"
+                  src="https://assets-global.website-files.com/60f85e33b5a89c61fcd8377d/61c2715b711f0121a48ed747_Designstripe-Customizable%20Graphics-min.png"
+                  alt="Customizable"
+                />
+                <p className="text-gray-800 mt-4">
+                  Customize your website to reflect your brand identity with our
+                  wide range of templates, colors, fonts, and layout options.
+                </p>
+              </div>
             </div>
-            <div className="bg-white rounded-lg p-6 shadow-md">
-              <h3 className="text-xl font-bold mb-4">Mobile-Friendly</h3>
-              <img
-                style={{ height: "60%", width: "100%" }}
-                src="https://www.dmacmedia.ie/blog/wp-content/uploads/2015/06/mobile_friendly_websites.jpg"
-              />
-              <p>
-                Ensure your website looks great on all devices with our
-                responsive design, optimized for desktops, tablets, and mobile
-                phones.
-              </p>
+            <div className="rounded-lg overflow-hidden shadow-sm bg-white border-t-4 border-green-500 flex flex-col justify-center items-center">
+              <div className="p-6 text-center">
+                <h3 className="text-xl font-bold mb-4 text-green-500">
+                  Mobile-Friendly
+                </h3>
+                <img
+                  className=" w-full object-cover"
+                  src="https://www.dmacmedia.ie/blog/wp-content/uploads/2015/06/mobile_friendly_websites.jpg"
+                  alt="Mobile-Friendly"
+                />
+                <p className="text-gray-800 mt-4">
+                  Ensure your website looks great on all devices with our
+                  responsive design, optimized for desktops, tablets, and mobile
+                  phones.
+                </p>
+              </div>
             </div>
           </div>
         </div>
