@@ -32,7 +32,7 @@ const Navbar: React.FC = () => {
             About
           </Link>
           <Link
-            href={"/about#contacts"}
+            href={"/booking"}
             className="text-gray-800 hover:text-gray-600 mx-4 hover-1"
           >
             Contact
@@ -81,15 +81,17 @@ const Navbar: React.FC = () => {
             About
           </Link>
           <Link
-            href={"/about#contacts"}
+            href={"/booking"}
             className="text-gray-800 hover:text-gray-600 mx-4 mt-2"
           >
             Contact
           </Link>
-          {/* Right Button (within the opened menu) */}
-          <button className="hover-2 bg-white mt-12 border-2 border-blue-200 text-blue-500 hover:bg-blue-100 text-lg font-bold py-2 px-4 rounded-full">
-            Get started
-          </button>
+          <Link href={"booking"}>
+            {" "}
+            <button className="hover-2 bg-white mt-12 border-2 border-blue-200 text-blue-500 hover:bg-blue-100 text-lg font-bold py-2 px-4 rounded-full">
+              Get started
+            </button>
+          </Link>
         </div>
       )}
     </nav>

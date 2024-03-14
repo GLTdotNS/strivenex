@@ -5,11 +5,11 @@ import Router from "next/router";
 import "nprogress/nprogress.css";
 import NProgress from "nprogress";
 import Cursor from "../components/Cursor/Cursor";
-
+import dynamic from "next/dynamic";
 import { useState, useEffect } from "react";
 import Loading from "../components/Loading/Loading";
 export default function App({ Component, pageProps }: AppProps) {
-  // const CrispWithNoSSR = dynamic(() => import("../components/crisp"));
+  const CrispWithNoSSR = dynamic(() => import("../components/Crisp/Crisp"));
   const [loading, setLoading] = useState<boolean>(false);
 
   useEffect(() => {
@@ -53,6 +53,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <Loading />
       ) : (
         <Layout>
+          <CrispWithNoSSR />
           <Cursor />
           <Component {...pageProps} />
         </Layout>

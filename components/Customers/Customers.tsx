@@ -38,14 +38,14 @@ const StepsSection: React.FC = () => {
             <div className="overflow-visible md:basis-1/2">
               <div style={{ opacity: 1, transform: "none" }}>
                 <div className="flex flex-row ">
-                  <h2 className="text-4xl hover-3 slide-in-from-left">
+                  <h2 className="text-4xl  slide-in-from-left bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500  text-transparent  bg-clip-text">
                     {" "}
                     Web Applications
                   </h2>
                 </div>
               </div>
             </div>
-            <div className="md:basis-1/2 md:px-5">
+            <div className="md:basis-1/2 md:px-5 text-lg">
               <div style={{ opacity: 1, transform: "none" }}>
                 <p>
                   Our bespoke web applications are tailored to adapt to your
@@ -66,11 +66,13 @@ const StepsSection: React.FC = () => {
             <div className="overflow-visible md:basis-1/2 ">
               <div style={{ opacity: 1, transform: "none" }}>
                 <div className="flex flex-row ">
-                  <h2 className="text-4xl  hover-3 ">E-commerce Solutions</h2>
+                  <h2 className="text-4xl  slide-in-from-left bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500  text-transparent  bg-clip-text">
+                    E-commerce Solutions
+                  </h2>
                 </div>
               </div>
             </div>
-            <div className="md:basis-1/2 md:px-5">
+            <div className="md:basis-1/2 md:px-5 text-lg">
               <div style={{ opacity: 1, transform: "none" }}>
                 <p>
                   Create fast and captivating online shops tailored for sales
@@ -91,13 +93,13 @@ const StepsSection: React.FC = () => {
             <div className="overflow-visible md:basis-1/2">
               <div style={{ opacity: 1, transform: "none" }}>
                 <div className="flex flex-row ">
-                  <h2 className="text-4xl  hover-3 ">
+                  <h2 className="text-4xl  slide-in-from-left bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500  text-transparent  bg-clip-text">
                     Easy-to-Manage Websites
                   </h2>
                 </div>
               </div>
             </div>
-            <div className="md:basis-1/2 md:px-5">
+            <div className="md:basis-1/2 md:px-5 text-lg">
               <div style={{ opacity: 1, transform: "none" }}>
                 <p>
                   We specialize in building websites that are easy to manage for
