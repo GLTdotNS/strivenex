@@ -8,6 +8,7 @@ import Cursor from "../components/Cursor/Cursor";
 import dynamic from "next/dynamic";
 import { useState, useEffect } from "react";
 import Loading from "../components/Loading/Loading";
+import Head from "next/head";
 export default function App({ Component, pageProps }: AppProps) {
   const CrispWithNoSSR = dynamic(() => import("../components/Crisp/Crisp"));
   const [loading, setLoading] = useState<boolean>(false);
@@ -49,6 +50,15 @@ export default function App({ Component, pageProps }: AppProps) {
   }, []);
   return (
     <>
+      <Head>
+        <title>StriveNex - Growing Your Business Made Simple</title>
+        <meta
+          name="description"
+          content="StriveNex is your partner in creating professional and effective websites. Elevate your online presence with our innovative web design solutions."
+        />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+
       {loading ? (
         <Loading />
       ) : (
