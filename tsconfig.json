@@ -16,6 +16,12 @@
     "incremental": true,
     "typeRoots": ["./node_modules/@types", "./types"]
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/careers.jsx"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "pages/careers.jsx",
+    "pages/sitemap.xml.js"
+  ],
   "exclude": ["node_modules"]
 }
