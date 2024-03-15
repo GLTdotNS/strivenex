@@ -70,7 +70,7 @@ const Landing = () => {
             onClick={() => router.push("/booking")}
             className="hover-2 p-2 border-2 text-lg w-64  border-blue-100 text-gray-700 hover:bg-blue-200  rounded-full text-center"
           >
-            Have a quistons ?
+            Have a question ?
           </button>
         </div>
       </div>
