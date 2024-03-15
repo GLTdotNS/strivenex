@@ -53,6 +53,10 @@ export default function App({ Component, pageProps }: AppProps) {
       <Head>
         <title>StriveNex - Growing Your Business Made Simple</title>
         <meta
+          name="google-site-verification"
+          content="vY1SJ70onCpG967s4TENGa_LPLOEnMyy8Xw2n3WiFD8"
+        />
+        <meta
           name="description"
           content="StriveNex is your partner in creating professional and effective websites. Elevate your online presence with our innovative web design solutions."
         />
