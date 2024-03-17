@@ -50,7 +50,7 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>StriveNex - Growing Your Business Made Simple</title>
+        <title>StriveNex - Growing Your Business Made Simple </title>
         <meta
           name="google-site-verification"
           content={process.env.NEXT_PUBLIC_KEY}
