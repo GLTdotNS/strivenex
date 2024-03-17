@@ -14,7 +14,7 @@ Strivenex is a freelance platform where developers like you can connect with cli
 
 ## About Me
 
-I'm [Your Name], the developer behind Strivenex. As a passionate web developer, I'm dedicated to crafting high-quality websites and digital solutions to help businesses thrive online.
+I'm Georgi Tonkov, the developer behind StriveNex. As a passionate web developer, I'm dedicated to crafting high-quality websites and digital solutions to help businesses thrive online.
 
 ## Features 🌟
 
@@ -27,15 +27,9 @@ I'm [Your Name], the developer behind Strivenex. As a passionate web developer, 
 
 - **Frontend**: Next.js, CSS/SCSS
 - **Backend**: Serverless Framework
-- **Database**: MongoDB
+- **Database**: Headless CMS
 - **Hosting**: Vercel
 
-## Getting Started 🏁
-
-1. **Clone the Repository**:
-
-   ```bash
-   git clone https://github.com/your_username/strivenex.git
 
 
 ## Contributing 🤝
@@ -43,10 +37,10 @@ I'm [Your Name], the developer behind Strivenex. As a passionate web developer, 
 Contributions are welcome! If you'd like to contribute to Strivenex, please follow these steps:
 
 1. Fork the repository.
-2. Create a new branch (`git checkout -b feature/your-feature-name`).
+2. Create a new branch 
 3. Make your changes.
-4. Commit your changes (`git commit -am 'Add new feature'`).
-5. Push to the branch (`git push origin feature/your-feature-name`).
+4. Commit your changes 
+5. Push to the branch.
 6. Create a new Pull Request.
 
 ## License 📝
@@ -57,8 +51,7 @@ This project is licensed under the MIT License.
 
 Feel free to reach out to me if you have any questions or suggestions:
 
-- Email: your.email@example.com
-- GitHub: [Your GitHub Profile](https://github.com/your_username)
+- Reach me out: [Your GitHub Profile](https://strivenex.com/contact)
 
-I appreciate your interest in Strivenex and look forward to collaborating with you!
+
 
