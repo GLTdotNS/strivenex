@@ -80,8 +80,8 @@ const Landing = () => {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 py-8 flex flex-col lg:flex-row items-center">
-        <div className="flex flex-wrap justify-center lg:justify-start lg:mr-8">
+      <div className="max-w-7xl mx-auto px-4 py-4 flex flex-col lg:flex-row sm:flex-col items-center">
+        <div className="flex flex-wrap justify-center lg:justify-start lg:mr-4">
           <Image
             width={500}
             height={500}
@@ -122,7 +122,7 @@ const Landing = () => {
             height={500}
             src={shopify.src}
             alt="Technology 5"
-            className="w-36 h-24 rounded-full mb-2 mx-2"
+            className="w-40 h- rounded-full mb-2 mx-2"
           />
           <Image
             width={200}

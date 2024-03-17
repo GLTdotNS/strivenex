@@ -123,7 +123,7 @@ const BuyNowPage = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full ">
         {/* Left side column */}
         <div className="lg:p-24 rounded-lg  lg:border-r-2 p-4">
-          <h2 className="text-3xl  uppercase mt-38">
+          <h2 className="text-3xl  uppercase mt-36">
             Ready to kick-start your project?{" "}
           </h2>
 
@@ -140,7 +140,7 @@ const BuyNowPage = () => {
           </ul>
           <img src={letter.src} alt="Your Image" className="mb-4 mx-auto" />
         </div>
-        {/* Right side column */}
+
         <div className="p-8 rounded-lg  ">
           {isLoading ? (
             <Loading />
@@ -151,7 +151,7 @@ const BuyNowPage = () => {
               ) : (
                 <>
                   {" "}
-                  <h2 className="text-3xl font-bold text-center mb-8 text-gray-800">
+                  <h2 className="text-3xl font-bold text-center mb-8 text-gray-800 mt-36">
                     Book a demo
                   </h2>
                   <form onSubmit={handleSubmit} className="space-y-6">

@@ -11,6 +11,7 @@ const StepsSection: React.FC = () => {
                 <div className="flex flex-row ">
                   <h2 className="text-4xl  slide-in-from-left bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500  text-transparent  bg-clip-text">
                     {" "}
+                    <span className="text-orange-100">💻</span>
                     Web Applications
                   </h2>
                 </div>
@@ -37,6 +38,7 @@ const StepsSection: React.FC = () => {
               <div style={{ opacity: 1, transform: "none" }}>
                 <div className="flex flex-row ">
                   <h2 className="text-4xl  slide-in-from-left bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500  text-transparent  bg-clip-text">
+                    <span className="text-orange-100">🛒</span>
                     E-commerce Solutions
                   </h2>
                 </div>
@@ -63,6 +65,7 @@ const StepsSection: React.FC = () => {
               <div style={{ opacity: 1, transform: "none" }}>
                 <div className="flex flex-row ">
                   <h2 className="text-4xl  slide-in-from-left bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500  text-transparent  bg-clip-text">
+                    <span className="text-orange-100">🌐</span>
                     Easy-to-Manage Websites
                   </h2>
                 </div>
