@@ -1,7 +1,7 @@
 <a align="center" href="https://strivenex.com"><img src="https://i.ibb.co/xfMp0vC/cover.png" alt="cover" border="0"></a>
 <h1 align="center">StriveNex</h1>
 
-<p align="center">Welcome to the StriveNex repository! <a align="right" href="https://ibb.co/wR0psYq"><img src="https://i.ibb.co/wR0psYq/fav.png"  alt="fav" width="30" height="30" border="100%" style="border-radius: 100%;" /></a>
+<p align="center">Welcome to the StriveNex repository! <a align="right" href="https://ibb.co/wR0psYq"><img src="https://i.ibb.co/wR0psYq/fav.png"  alt="fav" width="30" height="30" border="100%" style="border-radius:50%"/></a>
  🚀</p>
 
 ## Introduction
