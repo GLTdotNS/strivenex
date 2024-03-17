@@ -1,4 +1,8 @@
-<a align="center" href="https://strivenex.com"><img src="https://i.ibb.co/xfMp0vC/cover.png" alt="cover" border="0"></a>
+<p align="center">
+  <a href="https://strivenex.com">
+    <img src="https://i.ibb.co/xfMp0vC/cover.png" alt="cover" border="0">
+  </a>
+</p>
 <h1 align="center">StriveNex</h1>
 
 <p align="center">Welcome to the StriveNex repository! 
