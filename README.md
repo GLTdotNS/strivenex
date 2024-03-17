@@ -1,6 +1,4 @@
-<p align="center">
-  <img src="https://ibb.co/wR0psYq" alt="Strivenex Logo" width="300" height="200">
-</p>
+<a href="https://ibb.co/wR0psYq"><img src="https://i.ibb.co/wR0psYq/fav.png" alt="fav" border="0" /></a>
 
 <h1 align="center">Strivenex Freelance Services</h1>
 
