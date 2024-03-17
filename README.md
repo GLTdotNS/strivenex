@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://i.ibb.co/Pt049yr/FullLogo.jpg" alt="Strivenex Logo" width="300" height="200">
+  <img src="https://ibb.co/wR0psYq" alt="Strivenex Logo" width="300" height="200">
 </p>
 
 <h1 align="center">Strivenex Freelance Services</h1>
