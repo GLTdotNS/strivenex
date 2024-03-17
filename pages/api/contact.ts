@@ -5,9 +5,7 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  // if (!process.env.NEXT_PUBLIC_GMAIL) {
-  //   throw new Error('Gmail address is not provided');
-  // }
+
   if (req.method === "POST") {
     try {
       const {
@@ -23,19 +21,19 @@ export default async function handler(
         budget,
       } = req.body;
 
-      // Create a Nodemailer transporter
+      if (process.env.NEXT_PUBLIC_GMAIL === undefined) {
+        throw new Error("NEXT_PUBLIC_GMAIL environment variable is not defined");
+      }
+      
       const transporter = nodemailer.createTransport({
-        // Provide your email provider configuration here
         port: 465,
         host: "smtp.gmail.com",
         auth: {
           user: "georgitonkow@gmail.com",
-          pass: `acvh shny vfub upbk
-          `.replace(/\\n/g, "\n"),
+          pass: process.env.NEXT_PUBLIC_GMAIL.replace(/\\n/g, "\n"),
         },
       });
-
-      // Send mail with defined transport object
+      
       const info = await transporter.sendMail({
         from: "georgitonkow@gmail.com",
         to: "noncreativeblog@gmail.com",

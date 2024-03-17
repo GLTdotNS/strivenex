@@ -7,7 +7,6 @@ const CookieBanner: React.FC = () => {
     const cookieAccepted = localStorage.getItem("cookieAccepted");
     const cookieExpiration = localStorage.getItem("cookieExpiration");
 
-    // Check if the cookie has been accepted and check if it has expired
     if (
       !cookieAccepted ||
       (cookieExpiration && Date.now() > parseInt(cookieExpiration))
@@ -17,7 +16,6 @@ const CookieBanner: React.FC = () => {
   }, []);
 
   const acceptCookies = () => {
-    // Set expiration date to 2 days from now
     const expirationDate = new Date();
     expirationDate.setDate(expirationDate.getDate() + 2);
 

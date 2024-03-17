@@ -1,35 +1,6 @@
 import React from "react";
-import { useEffect, useRef, useState } from "react";
-import { useRouter } from "next/router";
 
 const StepsSection: React.FC = () => {
-  const [isIntersecting, setIsIntersecting] = useState(false);
-  const ref = useRef(null);
-  const router = useRouter();
-
-  useEffect(() => {
-    if (router.isReady) {
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting) {
-            setIsIntersecting(true);
-            observer.unobserve(entry.target);
-          }
-        },
-        { threshold: 0.5 } // Adjust the threshold as needed
-      );
-
-      if (ref.current) {
-        observer.observe(ref.current);
-      }
-
-      return () => {
-        if (ref.current) {
-          observer.unobserve(ref.current);
-        }
-      };
-    }
-  }, [router.isReady]);
   return (
     <div className="mx-auto mb-8 w-full border-b text-gray-700">
       <div className="flex flex-col border-t">
@@ -59,7 +30,6 @@ const StepsSection: React.FC = () => {
         </div>
       </div>
 
-      {/* Second Step */}
       <div className="flex flex-col border-t">
         <div className="lg:max-w-3xl xl:max-w-5xl 2xl:max-w-6xl self-center">
           <aside className="my-2 flex flex-col px-0 py-2 md:flex-row md:px-6 md:py-10 lg:py-12 xl:py-16">
@@ -86,7 +56,6 @@ const StepsSection: React.FC = () => {
         </div>
       </div>
 
-      {/* Third Step */}
       <div className="flex flex-col border-t">
         <div className="lg:max-w-3xl xl:max-w-5xl 2xl:max-w-6xl self-end">
           <aside className="my-2 flex flex-col px-0 py-2 md:flex-row md:px-6 md:py-10 lg:py-12 xl:py-16">

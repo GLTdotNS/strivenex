@@ -4,7 +4,6 @@ import type { AppProps } from "next/app";
 import Router from "next/router";
 import "nprogress/nprogress.css";
 import NProgress from "nprogress";
-import Cursor from "../components/Cursor/Cursor";
 import dynamic from "next/dynamic";
 import { useState, useEffect } from "react";
 import Loading from "../components/Loading/Loading";
@@ -54,7 +53,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <title>StriveNex - Growing Your Business Made Simple</title>
         <meta
           name="google-site-verification"
-          content="vY1SJ70onCpG967s4TENGa_LPLOEnMyy8Xw2n3WiFD8"
+          content={process.env.NEXT_PUBLIC_KEY}
         />
         <meta
           name="description"
@@ -68,7 +67,6 @@ export default function App({ Component, pageProps }: AppProps) {
       ) : (
         <Layout>
           <CrispWithNoSSR />
-          <Cursor />
           <Component {...pageProps} />
         </Layout>
       )}

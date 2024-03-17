@@ -9,9 +9,12 @@ import shopify from "../../styles/shopify_1.png";
 import figma from "../../styles/Figma_1.png";
 import adobe from "../../styles/adobe.png";
 import tailwind from "../../styles/Tailwind_1.png";
+import hosting from "../../styles/hosting.jpg";
+import mobile from "../../styles/mobile.jpg";
+import custom from "../../styles/custom.png";
 import mui from "../../styles/MUI_1.png";
 import next from "../../styles/nextjs.png";
-
+import Image from "next/image";
 import CustomerCountSection from "../Customers/Customers";
 
 const Landing = () => {
@@ -47,7 +50,9 @@ const Landing = () => {
             </button>
           </div>
 
-          <img
+          <Image
+            width={500}
+            height={500}
             className="mt-12 md:mt-12 md:w-[40%] sm:w-full"
             src={bg.src}
             alt="Platform"
@@ -76,61 +81,79 @@ const Landing = () => {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 py-8 flex flex-col lg:flex-row items-center">
-        {/* Technologies Icons */}
         <div className="flex flex-wrap justify-center lg:justify-start lg:mr-8">
-          <img
+          <Image
+            width={500}
+            height={500}
             src={next.src}
             alt="Technology 1"
             className="w-24 h-24 rounded-full mb-2 mx-2"
           />
-          <img
+          <Image
+            width={500}
+            height={500}
             src={three.src}
             alt="Technology 2"
             className="w-24 h-24 rounded-full mb-2 mx-2"
           />
-          <img
+          <Image
+            width={500}
+            height={500}
             src={vercel.src}
             alt="Technology 3"
             className="w-24 h-24 rounded-full mb-2 mx-2"
           />
-          <img
+          <Image
+            width={500}
+            height={500}
             src={sanity.src}
             alt="Technology 4"
             className="w-36 h-34 rounded-full mb-2 mx-2"
           />
-          <img
+          <Image
+            width={500}
+            height={500}
             src={stripe.src}
             alt="Technology 10"
             className="w-24 h-24 rounded-full mb-2 mx-2"
           />
-          <img
+          <Image
+            width={500}
+            height={500}
             src={shopify.src}
             alt="Technology 5"
             className="w-36 h-24 rounded-full mb-2 mx-2"
           />
-          <img
+          <Image
+            width={200}
+            height={200}
             src={figma.src}
             alt="Technology 6"
             className="w-34 h-24 rounded-full mb-2 mx-2"
           />
-          <img
+          <Image
+            width={200}
+            height={200}
             src={adobe.src}
             alt="Technology 7"
             className="w-34 h-24 rounded-full mb-2 mx-2"
           />
-          <img
+          <Image
+            width={500}
+            height={500}
             src={tailwind.src}
             alt="Technology 8"
             className="w-24 h-24 rounded-full mb-2 mx-2"
           />
-          <img
+          <Image
+            width={500}
+            height={500}
             src={mui.src}
             alt="Technology 9"
             className="w-24 h-24 rounded-full mb-2 mx-2"
           />
         </div>
 
-        {/* Strong Message */}
         <div className="flex flex-col lg:max-w-md">
           <h2 className="text-3xl font-bold text-center lg:text-left mb-4">
             Empowering Your Business with Cutting-Edge Technologies
@@ -153,9 +176,11 @@ const Landing = () => {
                 <h3 className="text-xl font-bold mb-4 text-blue-500">
                   Free Hosting
                 </h3>
-                <img
+                <Image
+                  width={500}
+                  height={500}
                   className=" w-auto object-cover"
-                  src="https://cdn.mos.cms.futurecdn.net/NQ4xeRKDaREYqtUg9n8xGc.jpg"
+                  src={hosting.src}
                   alt="Free Hosting"
                 />
                 <p className="text-gray-800 mt-4">
@@ -170,9 +195,11 @@ const Landing = () => {
                 <h3 className="text-xl font-bold mb-4 text-yellow-500">
                   Customizable
                 </h3>
-                <img
+                <Image
+                  width={500}
+                  height={500}
                   className=" w-auto object-cover"
-                  src="https://assets-global.website-files.com/60f85e33b5a89c61fcd8377d/61c2715b711f0121a48ed747_Designstripe-Customizable%20Graphics-min.png"
+                  src={custom.src}
                   alt="Customizable"
                 />
                 <p className="text-gray-800 mt-4">
@@ -186,9 +213,11 @@ const Landing = () => {
                 <h3 className="text-xl font-bold mb-4 text-green-500">
                   Mobile-Friendly
                 </h3>
-                <img
+                <Image
+                  width={500}
+                  height={500}
                   className=" w-full object-cover"
-                  src="https://www.dmacmedia.ie/blog/wp-content/uploads/2015/06/mobile_friendly_websites.jpg"
+                  src={mobile.src}
                   alt="Mobile-Friendly"
                 />
                 <p className="text-gray-800 mt-4">
