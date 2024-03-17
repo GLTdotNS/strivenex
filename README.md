@@ -51,7 +51,7 @@ This project is licensed under the MIT License.
 
 Feel free to reach out to me if you have any questions or suggestions:
 
-- Reach me out: [Your GitHub Profile](https://strivenex.com/contact)
+- Reach me out: [strivenex.com](https://strivenex.com/contact)
 
 
 
