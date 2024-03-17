@@ -6,7 +6,7 @@
 
 <!-- Add project logo or banner -->
 <p align="center">
-  <img src="https://strivenex.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.f36c0ea3.png&w=256&q=75" alt="Strivenex Logo" width="300" height="200">
+  <img src="https://strivenex.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.f36c0ea3.png&w=256&q=75" alt="Strivenex Logo" width="500" height="200">
 </p>
 
 <!-- Add a detailed description of your project -->
