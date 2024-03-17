@@ -1,5 +1,5 @@
 <a href="https://ibb.co/wR0psYq"><img src="https://i.ibb.co/wR0psYq/fav.png" alt="fav" border="0" /></a>
-
+<a align="center" href="https://ibb.co/SdKh8Ts"><img src="https://i.ibb.co/xfMp0vC/cover.png" alt="cover" border="0"></a>
 <h1 align="center">Strivenex Freelance Services</h1>
 
 <p align="center">Welcome to the Strivenex Freelance Services repository! 🚀</p>
