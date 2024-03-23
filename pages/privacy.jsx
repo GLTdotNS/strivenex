@@ -4,7 +4,7 @@ import Link from "next/link";
 const PrivacyAndCookiePolicyPage = () => {
   return (
     <div className="m-auto lg:w-[50%] sm:w-[100%] p-8">
-      <h1 className="text-3xl font-bold mb-8 mt-24">
+      <h1 className="text-3xl font-bold mb-8 mt-36">
         Privacy and Cookie Policy
       </h1>
       <p className="mb-4">Last updated: 12.08.2023</p>

@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import logo from "../../styles/logo.png";
+import bg from "../../styles/bg.png";
+
 import Link from "next/link";
 import Image from "next/image";
 const Navbar: React.FC = () => {
@@ -11,10 +13,18 @@ const Navbar: React.FC = () => {
 
   return (
     <>
-      <nav className="bg-gradient-to-r from-white via-gray-100 to-white p-6 border-b-[1px] fixed w-full z-50 ">
+      <nav className=" bg-white p-6 border-b-[1px] fixed w-full z-50 ">
         <div className="absolute top-0 left-0 w-full bg-gradient-to-r from-yellow-50   via-yellow-500 to-blue-500 text-white text-center ">
           <h1 className="text-sm p-2 ">We support Ukraine</h1>
         </div>
+        <Image
+          width={200}
+          height={200}
+          src={bg.src}
+          alt="Empower"
+          className="mr-4 h-12 mt-4"
+          style={{ display: "none" }}
+        />
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center ">
             <Link href={"/"}>
@@ -24,7 +34,7 @@ const Navbar: React.FC = () => {
                 height={200}
                 src={logo.src}
                 alt="Logo"
-                className="mr-4 h-16 mt-4"
+                className="mr-4 h-10 w-34  mt-6"
               />
             </Link>
           </div>
@@ -76,14 +86,7 @@ const Navbar: React.FC = () => {
         </div>
 
         {isMenuOpen && (
-          <div className="slide-in-from-top z-50 lg:hidden fixed font-bold text-4xl top-0 left-0 w-full h-full bg-orange-50 flex flex-col items-center justify-center">
-            <Image
-              width={200}
-              height={200}
-              src={logo.src}
-              alt=""
-              className="fixed top-[17px] left-0 h-24"
-            />
+          <div className="slide-in-from-top   z-50 lg:hidden fixed font-bold text-4xl top-[130px] left-0 w-full h-full bg-gradient-to-b from-white via-white via-white to-orange-100 z-100 flex flex-col items-center justify-center">
             <Link href={"/"} className="text-gray-800 hover:text-gray-600 mx-4">
               Home
             </Link>

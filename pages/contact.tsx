@@ -70,7 +70,7 @@ const ContactPage = () => {
               ) : (
                 <form
                   onSubmit={handleSubmit}
-                  className="mt-8 max-w-md mx-auto mt-36"
+                  className="mt-8 max-w-md mx-auto mt-40"
                 >
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
