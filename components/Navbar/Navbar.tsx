@@ -86,7 +86,7 @@ const Navbar: React.FC = () => {
         </div>
 
         {isMenuOpen && (
-          <div className="slide-in-from-top   z-50 lg:hidden fixed font-bold text-4xl top-[120px] left-0 w-full h-full bg-gradient-to-b from-white via-white via-white to-orange-100 z-100 flex flex-col items-center justify-center">
+          <div className="slide-in-from-top   z-50 lg:hidden fixed font-bold text-4xl border-t-2 top-[100px] left-0 w-full h-full bg-gradient-to-b from-white via-white via-white to-orange-100 z-100 flex flex-col items-center justify-center">
             <Link href={"/"} className="text-gray-800 hover:text-gray-600 mx-4">
               Home
             </Link>
