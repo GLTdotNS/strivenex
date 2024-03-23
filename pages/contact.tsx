@@ -64,13 +64,13 @@ const ContactPage = () => {
           {" "}
           <h1 className="text-3xl font-bold text-center mb-8">Contact Us</h1>
           <div className="flex flex-wrap -mx-4">
-            <div className="w-full lg:w-1/2 px-4 mb-8">
+            <div className="w-full lg:w-1/2 px-4 mb-8 mt-24">
               {messageSent ? (
                 <SuccessMessage />
               ) : (
                 <form
                   onSubmit={handleSubmit}
-                  className="mt-8 max-w-md mx-auto mt-40"
+                  className="mt-8 max-w-md mx-auto mt-42"
                 >
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>

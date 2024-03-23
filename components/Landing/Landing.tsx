@@ -24,7 +24,7 @@ const Landing = () => {
     <div className="bg-white">
       <header className="bg-cover bg-center text-blue-400 py-12">
         <div className="container mx-auto px-4 flex flex-col items-center md:flex-row md:items-start md:justify-between">
-          <div className="max-w-md text-center md:text-left mt-24">
+          <div className="max-w-md text-center md:text-left mt-48">
             <h1 className="text-4xl font-bold leading-tight mt-4 slide-in-from-top">
               Empower Your Business Growth with Us
             </h1>
@@ -53,7 +53,7 @@ const Landing = () => {
           <Image
             width={500}
             height={500}
-            className="mt-12 md:mt-12 md:w-[40%] sm:w-full"
+            className="mt-24 md:mt-48 md:w-[40%] sm:w-full"
             src={bg.src}
             alt="Platform"
           />
