@@ -7,8 +7,8 @@ const Getstarted = () => {
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold mb-8">Ready to Get Started?</h2>
         <p className="text-md mb-8">
-          Join thousands of businesses already using our platform to create
-          their online presence.
+          Join hundred of businesses already using our platform to create their
+          online presence.
         </p>
         <button
           onClick={() => router.push("/booking")}
