@@ -2,6 +2,14 @@ import React from "react";
 import cover from "../styles/strive.png";
 import rocket from "../styles/rocket.png";
 import { FaCheckCircle } from "react-icons/fa";
+import { FiTarget, FiCode, FiUsers, FiBookOpen, FiHeart } from "react-icons/fi";
+import tailored from "../styles/tailored.png";
+import community from "../styles/comunnity.png";
+import latest from "../styles/tech.png";
+import team from "../styles/team.png";
+import contin from "../styles/continue.png";
+import rel from "../styles/longterm.png";
+import Image from "next/image";
 const AboutUsPage: React.FC = () => {
   return (
     <div className="container mx-auto px-[1px] p-24 page fade-in">
@@ -156,6 +164,164 @@ const AboutUsPage: React.FC = () => {
             </span>
           </li>
         </ul>
+      </section>
+      <section className="py-20 px-4 lg:px-32">
+        <div className="max-w-6xl mx-auto">
+          <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-between">
+            <div className="mb-10 lg:mb-0 lg:w-1/2 lg:pr-8">
+              <h2 className="text-4xl lg:text-5xl font-bold text-gray-800 mb-6">
+                Tailored Approach to Every Challenge
+              </h2>
+              <p className="text-lg text-gray-600 mb-8">
+                At StriveNex, we understand that each challenge is unique. Our
+                uniqueness lies in our ability to create personalized solutions
+                for each client based on their specific needs and goals.
+              </p>
+              <div className="flex items-center">
+                <FiTarget className="text-blue-500 text-3xl mr-4" />
+                <p className="text-gray-700">Tailored Solutions</p>
+              </div>
+            </div>
+            <div className="lg:w-1/2">
+              <Image
+                width={300}
+                height={300}
+                src={tailored.src}
+                alt="Tailored Approach"
+                className="rounded-lg shadow-lg "
+              />
+            </div>
+          </div>
+          <div className="flex flex-col lg:flex-row-reverse items-center justify-center lg:justify-between mt-16">
+            <div className="mb-10 lg:mb-0 lg:w-1/2 lg:pl-8">
+              <h2 className="text-4xl lg:text-5xl font-bold text-gray-800 mb-6">
+                Innovative Approach to Technology
+              </h2>
+              <p className="text-lg text-gray-600 mb-8">
+                We are committed to innovation and utilize the latest
+                technologies and trends in our work. This enables us to create
+                unique and effective solutions that provide a competitive
+                advantage to our clients.
+              </p>
+              <div className="flex items-center">
+                <FiCode className="text-blue-500 text-3xl mr-4" />
+                <p className="text-gray-700">Latest Technologies</p>
+              </div>
+            </div>
+            <div className="lg:w-1/2">
+              <Image
+                width={300}
+                height={300}
+                src={latest.src}
+                alt="Innovative Approach"
+                className="rounded-lg shadow-lg"
+              />
+            </div>
+          </div>
+          <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-between mt-16">
+            <div className="mb-10 lg:mb-0 lg:w-1/2 lg:pr-8">
+              <h2 className="text-4xl lg:text-5xl font-bold text-gray-800 mb-6">
+                A Team of Passionate Professionals
+              </h2>
+              <p className="text-lg text-gray-600 mb-8">
+                Our uniqueness stems from our team of passionate and talented
+                professionals. We strive for excellence in everything we do,
+                combining technical expertise with a creative approach.
+              </p>
+              <div className="flex items-center">
+                <FiUsers className="text-blue-500 text-3xl mr-4" />
+                <p className="text-gray-700">Passionate Team</p>
+              </div>
+            </div>
+            <div className="lg:w-1/2">
+              <Image
+                width={300}
+                height={300}
+                src={team.src}
+                alt="Passionate Team"
+                className="rounded-lg shadow-lg"
+              />
+            </div>
+          </div>
+          <div className="flex flex-col lg:flex-row-reverse items-center justify-center lg:justify-between mt-16">
+            <div className="mb-10 lg:mb-0 lg:w-1/2 lg:pl-8">
+              <h2 className="text-4xl lg:text-5xl font-bold text-gray-800 mb-6">
+                Focus on Long-term Relationships
+              </h2>
+              <p className="text-lg text-gray-600 mb-8">
+                At StriveNex, we donk&apos;t just create projects, we build
+                long-term relationships. We prioritize understanding our
+                client&apos;s vision and goals, fostering trust and
+                collaboration for sustainable success.
+              </p>
+              <div className="flex items-center">
+                <FiBookOpen className="text-blue-500 text-3xl mr-4" />
+                <p className="text-gray-700">Long-term Partnerships</p>
+              </div>
+            </div>
+            <div className="lg:w-1/2">
+              <Image
+                width={300}
+                height={300}
+                src={rel.src}
+                alt="Long-term Relationships"
+                className="rounded-lg shadow-lg"
+              />
+            </div>
+          </div>
+          <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-between mt-16">
+            <div className="mb-10 lg:mb-0 lg:w-1/2 lg:pr-8">
+              <h2 className="text-4xl lg:text-5xl font-bold text-gray-800 mb-6">
+                Continuous Learning and Improvement
+              </h2>
+              <p className="text-lg text-gray-600 mb-8">
+                We are dedicated to continuous learning and improvement. Our
+                commitment to staying ahead of industry trends and mastering new
+                skills ensures that we deliver cutting-edge solutions that
+                exceed expectations.
+              </p>
+              <div className="flex items-center">
+                <FiHeart className="text-blue-500 text-3xl mr-4" />
+                <p className="text-gray-700">Continuous Improvement</p>
+              </div>
+            </div>
+            <div className="lg:w-1/2">
+              <Image
+                width={300}
+                height={300}
+                src={contin.src}
+                alt="Continuous Learning"
+                className="rounded-lg shadow-lg"
+              />
+            </div>
+          </div>
+          <div className="flex flex-col lg:flex-row-reverse items-center justify-center lg:justify-between mt-16">
+            <div className="mb-10 lg:mb-0 lg:w-1/2 lg:pl-8">
+              <h2 className="text-4xl lg:text-5xl font-bold text-gray-800 mb-6">
+                Community Engagement and Social Responsibility
+              </h2>
+              <p className="text-lg text-gray-600 mb-8">
+                StriveNex is not only dedicated to our clients but also to our
+                community. We actively engage in community initiatives and
+                social responsibility efforts, contributing positively to
+                society while upholding our values and integrity.
+              </p>
+              <div className="flex items-center">
+                <FiUsers className="text-blue-500 text-3xl mr-4" />
+                <p className="text-gray-700">Community Engagement</p>
+              </div>
+            </div>
+            <div className="lg:w-1/2">
+              <Image
+                width={300}
+                height={300}
+                src={community.src}
+                alt="Community Engagement"
+                className="rounded-lg shadow-lg"
+              />
+            </div>
+          </div>
+        </div>
       </section>
     </div>
   );
