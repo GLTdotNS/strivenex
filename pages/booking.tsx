@@ -119,9 +119,8 @@ const BuyNowPage = () => {
   const options = useMemo(() => countryList().getData(), []);
 
   return (
-    <div className="min-h-screen bg-white-50 flex lg:p-8 sm:mt-2 lg:mt-0 justify-center items-center fade-in font-serif spacing-4">
+    <div className="proxima min-h-screen bg-white-50 flex lg:p-8  lg:mt-0 justify-center items-center fade-in font-serif spacing-4">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full ">
-        {/* Left side column */}
         <div className="lg:p-24 rounded-lg  lg:border-r-2 p-4">
           <h2 className="text-3xl  uppercase mt-36 mb-8">
             Ready to kick-start your project?{" "}
@@ -218,7 +217,7 @@ const BuyNowPage = () => {
                           htmlFor="branch"
                           className="block text-gray-700 font-semibold mb-2"
                         >
-                          Branch/Field of the Brand
+                          Field of the Brand
                         </label>
                         <input
                           type="text"
@@ -352,7 +351,7 @@ const BuyNowPage = () => {
                           id="description"
                           name="description"
                           value={formData.description}
-                          onChange={handleTextareaChange} // Changed to handleTextareaChange
+                          onChange={handleTextareaChange}
                           rows={4}
                           className="w-full border-sky-600 p-4 border rounded-md shadow-sm focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-400 focus:ring-opacity-50"
                         />

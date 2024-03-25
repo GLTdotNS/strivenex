@@ -44,7 +44,7 @@ const Landing = () => {
             </ul>
             <button
               onClick={() => router.push("/booking")}
-              className="hover-2 font-bold py-2 px-6 rounded-full mt-8 flex items-center transition duration-300 ease-in-out"
+              className="hover-2 font-bold py-2 px-6  mt-8 flex items-center transition duration-300 ease-in-out"
             >
               Click here to unlock your digital future
             </button>
@@ -73,7 +73,7 @@ const Landing = () => {
           <CustomerCountSection />
           <button
             onClick={() => router.push("/booking")}
-            className="hover-2 p-2 border-2 text-lg w-64  border-blue-100 text-gray-700 hover:bg-blue-200  rounded-full text-center"
+            className="hover-2 p-2 border-2 text-lg w-64  border-blue-100 text-gray-700 hover:bg-blue-200   text-center"
           >
             Have a question ?
           </button>
