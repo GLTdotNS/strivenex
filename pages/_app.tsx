@@ -8,6 +8,7 @@ import dynamic from "next/dynamic";
 import { useState, useEffect } from "react";
 import Loading from "../components/Loading/Loading";
 import Head from "next/head";
+import PopupBanner from "../components/PopUp/PopUp";
 export default function App({ Component, pageProps }: AppProps) {
   const CrispWithNoSSR = dynamic(() => import("../components/Crisp/Crisp"));
   const [loading, setLoading] = useState<boolean>(false);
@@ -66,6 +67,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <Loading />
       ) : (
         <Layout>
+          <PopupBanner />
           <CrispWithNoSSR />
           <Component {...pageProps} />
         </Layout>

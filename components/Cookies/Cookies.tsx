@@ -30,7 +30,7 @@ const CookieBanner: React.FC = () => {
   return (
     <>
       {showBanner && (
-        <div className="fixed bottom-0 left-0 rounded-r right-0 lg:w-[400px] sm:w-full bg-gray-800 text-white h-[150px] p-4 z-50 animate-slide-in ">
+        <div className="fixed bottom-0 left-0 rounded-r right-0 lg:w-[400px] sm:w-full  text-white h-[150px] p-4 z-50 animate-slide-in  blured">
           <div className="max-w-2xl mx-auto flex items-center justify-between">
             <p className="text-sm">
               This website uses cookies to ensure you get the best experience.
