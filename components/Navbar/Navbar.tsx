@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import logo from "../../styles/logo.png";
 import bg from "../../styles/bg.png";
 import { FaHome, FaInfoCircle, FaEnvelope } from "react-icons/fa"; // Import icons
+import { IoMdMenu } from "react-icons/io";
+import { IoCloseOutline } from "react-icons/io5";
 
 import Link from "next/link";
 import Image from "next/image";
@@ -63,14 +65,22 @@ const Navbar: React.FC = () => {
               className="text-gray-800 focus:outline-none"
               onClick={toggleMenu}
             >
-              <div className="demo">
-                <div className="menu-icon">
-                  <input className="menu-icon__cheeckbox" type="checkbox" />
-                  <div>
-                    <span></span>
-                    <span></span>
+              <div className="border-2 border-gray-300 mt-6 p-[4px] rounded-full w-20">
+                {isMenuOpen ? (
+                  <div className="ml-1 flex items-center">
+                    <span className="mr-1">close</span>
+                    <span>
+                      <IoCloseOutline />
+                    </span>
                   </div>
-                </div>
+                ) : (
+                  <div className="ml-1 flex items-center">
+                    <span className="mr-1">menu</span>
+                    <span>
+                      <IoMdMenu />
+                    </span>
+                  </div>
+                )}
               </div>
             </button>
           </div>

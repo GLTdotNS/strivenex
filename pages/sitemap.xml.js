@@ -4,10 +4,9 @@ export default function Sitemap() {
 }
 
 export async function getServerSideProps({ res }) {
-  // Генерирайте съдържанието на sitemap.xml и го върнете като отговор
-  const pages = ["/", "/about", "/contact", "/contact", "/booking"]; // Списък с URL адреси на вашите страници
+  const pages = ["/", "/about", "/contact", "/contact", "/booking"];
 
-  const baseUrl = "https://strivenex.com"; // Заменете със своя URL адрес
+  const baseUrl = "https://strivenex.com";
   const currentDate = new Date().toISOString();
 
   const sitemapContent = `<?xml version="1.0" encoding="UTF-8"?>
