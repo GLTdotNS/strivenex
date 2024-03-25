@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { useState, useEffect } from "react";
 
 const PopupBanner: React.FC = () => {
@@ -9,7 +10,7 @@ const PopupBanner: React.FC = () => {
       if (!isClosed) {
         setIsOpen(true);
       }
-    }, 10000); // Delay for 10 seconds
+    }, 10000);
 
     return () => clearTimeout(timeout);
   }, []);
@@ -47,9 +48,12 @@ const PopupBanner: React.FC = () => {
           <div className="">
             <p>Special Offer!</p>
             <p className="text-sm">Get 20% off on your first purchase.</p>
-            <button className="w-full border-2 border-gray-800 hover:bg-white hover- rounded-full p-2 mt-2 ">
-              Get started
-            </button>
+            <Link href={"/booking"}>
+              {" "}
+              <button className="w-full border-2 border-gray-800 hover:bg-white hover- rounded-full p-2 mt-2 ">
+                Get started
+              </button>
+            </Link>
           </div>
         </>
       )}
