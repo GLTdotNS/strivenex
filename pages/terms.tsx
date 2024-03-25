@@ -2,8 +2,8 @@ import { RiLockPasswordLine } from "react-icons/ri"; // Importing a lock icon fr
 import Link from "next/link";
 const TermsOfService = () => {
   return (
-    <div className="max-w-3xl mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-8">Terms of Service</h1>
+    <div className="max-w-3xl mx-auto px-4 py-8 ">
+      <h1 className="text-3xl font-bold mb-8 mt-32">Terms of Service</h1>
 
       <section className="mb-8">
         <h2 className="text-xl font-bold mb-4">1. Introduction</h2>

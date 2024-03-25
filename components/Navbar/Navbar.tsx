@@ -39,7 +39,7 @@ const Navbar: React.FC = () => {
               className="mr-4 h-23 w-24  mt-6"
             />
           </Link>
-          <div className="hidden lg:flex uppercase flex-grow justify-center">
+          <div className="hidden lg:flex uppercase flex-grow justify-center mt-4">
             <Link
               href={"/"}
               className="text-gray-800 hover:text-gray-600 mx-4 hover-1"
@@ -118,9 +118,11 @@ const Navbar: React.FC = () => {
               Contacts
             </a>
             <div className="flex justify-center mt-24 bottom-[20px] w-full">
-              <button className="hover-2 bg-white border-2 border-blue-200 text-blue-500 hover:bg-blue-100 text-lg font-bold py-2 px-4">
-                Get started
-              </button>
+              <Link href={"/booking"}>
+                <button className="hover-2 bg-white border-2 border-blue-200 text-blue-500 hover:bg-blue-100 text-lg font-bold py-2 px-4">
+                  Get started
+                </button>
+              </Link>
             </div>
 
             <div className="flex justify-center w-full mt-4">
