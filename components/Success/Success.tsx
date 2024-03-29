@@ -3,7 +3,7 @@ import React from "react";
 
 const SuccessMessage = () => {
   return (
-    <div className="flex items-center text-xl justify-center ">
+    <div className="flex items-center text-xl justify-center mt-24">
       <div className="succes-content flex items-center">
         <svg
           xmlns="http://www.w3.org/2000/svg"

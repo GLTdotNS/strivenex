@@ -136,7 +136,7 @@ const ContactPage = () => {
                 </form>
               )}
             </div>
-            <div className="w-full lg:w-1/2 px-4 mb-8">
+            <div className="w-full lg:w-1/2 px-4 mb-8v mt-24">
               <div className="flex flex-col items-center justify-center h-full">
                 <FiMail className="text-blue-500 text-6xl mb-4" />
                 <p className="text-lg text-center mb-4">
